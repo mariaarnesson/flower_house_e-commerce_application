@@ -1,0 +1,35 @@
+[
+    {
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+        "name": "birthday_flower",
+        "friendly_name": "Birthday flower",
+        "description": "A bouquets of flowers can be a beautiful decoration of the interior, home table, as well as an interesting gift for a birthday, name day or an important anniversary. Flower arrangements are interesting gifts for family, relatives, friends and loves ones. They express good wishes, give joy, are a sing of love.",
+        "image_url": "https://img.freepik.com/free-photo/woman-making-beautiful-floral-bouquet_23-2148846524.jpg?w=1060&t=st=1687599628~exp=1687600228~hmac=6708cbc086859b0c5a59b01e52d1b06f3955dc2b28ad2dbbe38cab28626c1049",
+        "image": "birthday_flower_category.png"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+        "name": "bouquets",
+        "friendly_name": "Bouquets",
+        "description": "We have bouquets for every occasion. At all stage of life, we help you send floral hugs, win over someone you like, or just say hello with a blooming surprise. A wide range of colors and variety of plants make it possible to arrange many interresting compositions from summer flowers. Both bouquets are elegant, effective, uniforme, as well as mixed, ydillic, modest, atmospheric. They all make you happy, beacouse it's real... summer in a vase!",
+        "image_url": "https://img.freepik.com/free-photo/fresh-flowers-bouquet-girl-hands_140725-736.jpg?w=826&t=st=1687601512~exp=1687602112~hmac=bbc9d4a8802c9fec40e393471acf9789f5003c1f08ea1ddb51070bc527bb15e2",
+        "image": "bouquets_category.png"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+        "name": "wedding_flowers",
+        "friendly_name": "Wedding",
+        "description": "The wedding bouquets is one of the most important elements of the ceremony. It completes and distinguished the Bride and Groom, and above all, it is a symbol of marriage.",
+        "image_url": "https://img.freepik.com/free-photo/beautiful-bouquet-wild-flowers-hands-bride_8353-9161.jpg?w=1060&t=st=1687602541~exp=1687603141~hmac=924b5b439367a9827bd3cf7a49310450c4fa2a01bdb17d21ffee2a81d0b0c672",
+        "image": "wedding_category_J359h1L.png"
+      }
+    }
+  ]

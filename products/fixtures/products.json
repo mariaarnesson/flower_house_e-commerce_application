@@ -1,0 +1,352 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340155",
+        "name": "Tulips",
+        "description": "Tulips are among the most popular of all garden flowers, and numerous cultivars and varieties have been developed.",
+        "price": 00,30
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "https://img.freepik.com/premium-psd/top-view-happy-birthday-bouquet-tulips-with-card-anniversary-celebration_23-2148671465.jpg?w=1060",
+        "image": "tulips.png"
+      }
+    },
+      {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001730010",
+          "name": "Pretty In Pink",
+          "description": "Sunny and warm shades of carefully selected roses. The pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. Make this moment magical by choosing this bouquet of flowers!",
+          "price": 50.99,
+          "category": 3,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-pink-bouquet-flowers_52683-45193.jpg?w=1060&t=st=1687120274~exp=1687120874~hmac=3e5abcf05312e035e7865d5a611e8e010a5b012af129edb4e2659aecdf74b1bb",
+          "image": "pink.png"
+        }
+      },
+      {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp01",
+          "name": "Antique Rose",
+          "description": "Sunny and warm shades of carefully selected roses. The pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. Make this moment magical by choosing this bouquet of flowers!",
+          "price": 50.99,
+          "category": 3,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-watercolour-bouquet-flowers_52683-45189.jpg?w=1060&t=st=1687263265~exp=1687263865~hmac=81843ce3643cf06f45129757ab44de97242b7a5933805cc64b71584bb6b860d7",
+          "image": "wedding_01.png"
+        }
+      },
+      {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp02",
+          "name": "Amour Argenté",
+          "description": "Sunny and warm shades of carefully selected roses. The pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. Make this moment magical by choosing this bouquet of flowers!",
+          "price": 50.99,
+          "category": 3,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-bouquet-rose-flowers_52683-45187.jpg?w=1060&t=st=1687263880~exp=1687264480~hmac=9ebe582810dbe346b7322036b2fae999ccdd1909b594bd6b9ab6477216c860e7",
+          "image": "wedding_02.png"
+        }
+      },
+      {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp03",
+          "name": "Pink Petals",
+          "description": "Sunny and warm shades of carefully selected flowers. The pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. Make this moment magical by choosing this bouquet of flowers!",
+          "price": 50.99,
+          "category": 3,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-spring-bouquet-flowers_52683-45196.jpg?w=1060&t=st=1687270506~exp=1687271106~hmac=50a36a83face9fdb47f3999cd74157c8d21d5e7361965e9e6a38f7cd99304e08",
+          "image": "wedding_03.png"
+        }
+      },
+      {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp04",
+          "name": "BlueSky Flowers",
+          "description": "Sunny and warm shades of carefully selected roses. The pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. Make this moment magical by choosing this bouquet of flowers!",
+          "price": 50.99,
+          "category": 3,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-mixed-bouquet-flowers_52683-45194.jpg?w=1060&t=st=1687270826~exp=1687271426~hmac=f9b6192e385321e36ddab634b6599b3e509e9fb52223cc512df690954cc47302",
+          "image": "wedding_04.png"
+        }
+      },
+      {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp05",
+          "name": "Fruits Of Summer",
+          "description": "An exceptionally delightful bouquet with its specific charm.",
+          "price": 50.99,
+          "category": 3,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/premium-photo/watercolor-bouquet-with-peony-hand-drawn_328657-776.jpg?w=826",
+          "image": "wedding_05.png"
+        }
+      },
+      {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp06",
+          "name": "LoveScare Flowers",
+          "description": "Delicate and romantic wedding bouquet.",
+          "price": 50.99,
+          "category": 3,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/free-vector/beautiful-vintage-floral-bouquet_52683-30545.jpg?w=1060&t=st=1687271323~exp=1687271923~hmac=364b9f53ccfa51964c010a29c38624b108329a97183821965a290e528456394c",
+          "image": "wedding_06.png"
+        }
+      },
+      {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp07",
+          "name": "Beautiful Blossoms",
+          "description": "Extremely elegant wedding bouquet.",
+          "price": 54.99,
+          "category": 3,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/premium-vector/pink-roses-hydrangea-begonia-flower_44122-364.jpg?w=1060",
+          "image": "wedding_07.png"
+        }
+      },
+      {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp08",
+          "name": "Diamond Devotion",
+          "description": "Tulips are among the most popular of all garden flowers, and many cultivars and varieties have been developed. A variety of tulips that have become very popular in recent years are the elegant French tulips.",
+          "price": 54.99,
+          "category": 1,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/free-photo/tulips-bouquet-with-gift-box-table_23-2148070776.jpg?w=826&t=st=1687278846~exp=1687279446~hmac=30dd1697ddfc7bcb1edc54b2d9c5438a9792bbfee9173df91e4473be736a9d82",
+          "image": "birthday_01.png"
+        }
+      },
+      {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp09",
+          "name": "Springoo",
+          "description": "Tulips are among the most popular of all garden flowers, and many cultivars and varieties have been developed. A variety of tulips that have become very popular in recent years are the elegant French tulips.",
+          "price": 49.99,
+          "category": 1,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/free-photo/wooden-box-with-tiny-chalkboard_23-2147987939.jpg?w=1060&t=st=1687279209~exp=1687279809~hmac=3e190cfb9a39c7ccab14d83f5b588a5f752e3f71b35f93303157b2b1ee830959",
+          "image": "birthday_02.png"
+        }
+      },
+      {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp10",
+          "name": "Saphirs Chéris",
+          "description": "Tulips are among the most popular of all garden flowers, and many cultivars and varieties have been developed. A variety of tulips that have become very popular in recent years are the elegant French tulips.",
+          "price": 39.99,
+          "category": 1,
+          "rating": 2.0,
+          "image_url": "https://img.freepik.com/free-photo/flowers-flower-background-mothers-beauti_1303-2039.jpg?w=1060&t=st=1687287717~exp=1687288317~hmac=f7ae016e21768034c38cb1a8baf32e674cb047bd0ecc45af7493417cdc5e36f8",
+          "image": "birthday_03.png"
+        }
+      },
+      {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp11",
+          "name": "Sapphire Sweethearts",
+          "description": "Tulips are among the most popular of all garden flowers, and many cultivars and varieties have been developed. A variety of tulips that have become very popular in recent years are the elegant French tulips.",
+          "price": 49.99,
+          "category": 1,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/premium-photo/bunch-flowers-boxes-with-one-saying-tulips_910718-155.jpg?w=1060",
+          "image": "birthday_04.png"
+        }
+      },
+      {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp12",
+          "name": "Ladies Day",
+          "description": "The unusual and carefully selected composition of gerberas, alstroemerias and carnations in pastel colors is intended for every occasion. Its unusual and original character will surely please and surprise the recipient. ",
+          "price": 39.99,
+          "category": 1,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/free-vector/valentine-s-bouquet-with-card-concept-illustration_114360-4651.jpg?w=826&t=st=1687288638~exp=1687289238~hmac=afbd6fbb82da322fcc216898c1a4321978a708e33e6d38756af4c83787227c02",
+          "image": "birthday_05.png"
+        }
+      },
+      {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp13",
+          "name": "Celebrations",
+          "description": "A bouquet of red roses made individually with commitment and care. A bestseller among rose bouquets.",
+          "price": 49.99,
+          "category": 1,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/free-photo/red-roses-bouquet-table_140725-828.jpg?w=740&t=st=1687289223~exp=1687289823~hmac=0c6617182a56fc75bfa4a2c29a54a6053af4b66df677adcd8dd1f9df4d362bb6",
+          "image": "birthday_06.png"
+        }
+      },
+      {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp14",
+          "name": "UpperCozy Florist",
+          "description": "A bouquet in a delicate tone, ideally suited as a unique surprise for a loved one and as a nice congratulatory gesture.",
+          "price": 49.99,
+          "category": 1,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/free-photo/top-view-beautiful-roses-bouquet-with-pink-ribbon_23-2148822309.jpg?w=740&t=st=1687289617~exp=1687290217~hmac=c19bb60b9151d43ce7f0344e8c66cb8d96e72f1c0dcfba7e38214a542111adc1",
+          "image": "birthday_07.png"
+        }
+      },
+      {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp15",
+          "name": "Beambox",
+          "description": "Delight a loved one and give her flowers! An impressive basket of 25 roses richly decorated with green accessories is a great gift idea for an anniversary or birthday.",
+          "price": 39.99,
+          "category": 1,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/premium-vector/pink-rose-flowers-arrangement-isolated-white_212889-5440.jpg?w=826",
+          "image": "birthday_08.png"
+        }
+      },
+      {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp16",
+          "name": "Mood Messa Flowers",
+          "description": "Pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. This is an offer for every occasion! Make the moment magical by choosing this bouquet of flowers!",
+          "price": 19.99,
+          "category": 2,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/premium-vector/vintage-watercolor-blue-white-flower-bouquet-illustration_150636-171.jpg?w=826",
+          "image": "bouquet_01.png"
+        }
+      },
+      {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp17",
+          "name": "French Moments Flowers",
+          "description": "Sunny and warm shades of carefully selected roses will certainly positively surprise the recipient. Such a surprise will brighten the day of everyone who receives it.",
+          "price": 19.99,
+          "category": 2,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/premium-vector/tulips-bouquet-white_53562-12670.jpg?w=740",
+          "image": "bouquet_02.png"
+        }
+      },
+      {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp18",
+          "name": "Flowers By Adela",
+          "description": "Lilac flowers delight with their wonderful appearance, they are also a beautiful decoration of home or office.",
+          "price": 19.99,
+          "category": 2,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/premium-vector/lilac-flowers-vase_316696-680.jpg?w=826",
+          "image": "bouquet_03.png"
+        }
+      },
+      {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp19",
+          "name": "Floral Fancy",
+          "description": "Pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. This is an offer for every occasion! Make the moment magical by choosing this bouquet of flowers!",
+          "price": 15.99,
+          "category": 2,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/premium-vector/white-tulips-ferns-bouquet-light-green-jar_154848-1180.jpg?w=826",
+          "image": "bouquet_04.png"
+        }
+      },
+      {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp20",
+          "name": "Fresh Miss",
+          "description": "Sunny and warm shades of carefully selected roses will certainly positively surprise the recipient. Such a surprise will brighten the day of everyone who receives it.",
+          "price": 17.99,
+          "category": 2,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/premium-vector/yellow-wildflowers-bouquet_306501-331.jpg?w=740",
+          "image": "bouquet_05.png"
+        }
+      },
+      {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp21",
+          "name": "Sunflowers",
+          "description": "Bright and cheery sunflower bouquets are perfect for summer and will easily brighten up a room. Give your loved one a unique gift and give a bit of summer aura by choosing a bouquet of sunflowers.",
+          "price": 17.99,
+          "category": 2,
+          "rating": 5.0,
+          "image_url": "https://img.freepik.com/premium-vector/hand-painted-watercolor-sunflower-arrangement-paper-with-hang-tag-gift_73414-986.jpg?w=826",
+          "image": "bouquet_06.png"
+        }
+      },
+      {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp5001600425",
+          "name": "Better Flora",
+          "description": "Pleasant tones emphasize the universality of the bouquet. This is an offer for every occasion!",
+          "price": 50.99,
+          "category": 2,
+          "rating": 3.0,
+          "image_url": "https://img.freepik.com/premium-vector/flower-bouquet_463755-102.jpg?w=826",
+          "image": "flower_bouquet.png"
+        }
+      },
+      {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp23",
+          "name": "With Sympathy",
+          "description": "Pleasant tone of colors in this bouquet emphasizes the universality of the bouquet. This is an offer for every occasion! Make the moment magical by choosing this bouquet of flowers!",
+          "price": 25.99,
+          "category": 2,
+          "rating": 4.0,
+          "image_url": "https://img.freepik.com/free-vector/flat-valentine-s-day-flowers-illustration_23-2149240050.jpg?w=826&t=st=1687293568~exp=1687294168~hmac=d0592b8e03813183e831b95df54be94f9fa532c90e8ed98d228485f91c3abc6b",
+          "image": "bouquet_08.png"
+        }
+      } 
+]    
