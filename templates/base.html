@@ -63,37 +63,8 @@
         </div>
         <div id="topnav" class="row  pt-lg-2 d-none d-lg-flex p-3 mb-2 text-md-start" style="background-color: #8E5252;">
             
-            <div class="dropdown col-2 col-lg-1 my-auto py-0 py-lg-0">
-                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Shop
-                </a>
-                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                    <a href=# class="dropdown-item">Birthday Flowers</a>
-                    <a href=# class="dropdown-item">Bouquets</a>
-                    <a href=# class="dropdown-item">Wedding flowers</a>
-                    <a href=# class="dropdown-item">All Products</a>
-                </div>
-            </div>
-            <div class="col-2 col-lg-1 my-auto py-0 py-lg-0">
-                <a href=# class="nav-link main-logo-link text-uppercase text-white">
-                    Blog
-                </a>
-            </div>
-            <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
-                <form method="GET" action="#">
-                    <div class="input-group">
-                        <input class="form-control bg-transparent text-white" type="text" name="q" placeholder="Search">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-transparent" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search text-white"></i>
-                                </span>
-                            </button>
-                        </div>
-                        
-                    </div>
-                </form>
-            </div>
+            
+                
 
             <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
                 <a href=# class="nav-link main-logo-link">
@@ -134,7 +105,7 @@
                    
                 </ul>
                 <div class="list-inline-item ml-3">
-                    <a class="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="#">
+                    <a  href="#">
                         <div class="text-center">
                             <div><i class="fas fa-heart fa-lg"></i></div>
                             
@@ -143,22 +114,16 @@
                     </a>
                 </div>
                 <div class="list-inline-item ml-3">
-                    <a class="{% if grand_total %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="#">
+                    <a href="#">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                            <p class="my-0 text-white">
-                                {% if grand_total %}
-                               <p class="text-danger"> ${{ grand_total|floatformat:2 }}</p>
-                                {% else %}
-                                <p class="text-white">$0.00</p>
-                                {% endif %}
-                            </p>
+                           
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        {% include 'includes/mobile-top-header.html' %}
+       {% include 'includes/mobile-top-header.html' %}
     </header>
   <!--
     {% if messages %}
@@ -210,9 +175,9 @@
 </footer>
 <!-- /.footer -->
 
-
+{% block postloadjs %}
     
-    {% endblock %}
+{% endblock %}
 
     
   </body>
