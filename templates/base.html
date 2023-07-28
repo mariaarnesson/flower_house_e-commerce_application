@@ -62,7 +62,15 @@
             </div>            
         </div>
         <div id="topnav" class="row  pt-lg-2 d-none d-lg-flex p-3 mb-2 text-md-start" style="background-color: #8E5252;">
-            
+            <div class="dropdown col-2 col-lg-1 my-auto py-0 py-lg-0">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                    
+                    <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                </div>
+            </div>
             
                 
 
@@ -84,7 +92,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                          
+                        
                                 <a href=# class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href=# class="dropdown-item">My Profile</a>
