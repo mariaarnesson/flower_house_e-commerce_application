@@ -68,6 +68,9 @@
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                     
+                    <a href="{% url 'products' %}?category=birthday_flower" class="dropdown-item">Birthday Flowers</a>
+                    <a href="{% url 'products' %}?category=bouquets" class="dropdown-item">Bouquets</a>
+                    <a href="{% url 'products' %}?category=wedding_flowers" class="dropdown-item">Wedding flowers</a>
                     <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                 </div>
             </div>
