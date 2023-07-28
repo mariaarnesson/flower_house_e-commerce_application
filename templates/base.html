@@ -1,0 +1,219 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"
+            content="">
+        <meta name="keywords"
+            content="Flower shop near me, send flowers, unique bouquets, home delivery flowers London,
+            special occassion, spring wedding flowers UK, long-lasting summer flowers, flowers for everyone,
+            best flowers to give a girl, designe your own bouquet online, event Florists London, beautifule
+            flowers for home, fresh products delivery to your door"> 
+    {% endblock %}
+
+    {% block extra_meta %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Tillana:wght@500&display=swap" rel="stylesheet">
+    {% endblock %}
+
+    {% block corecss %}
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+        
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+        <script src="https://kit.fontawesome.com/142db3e41a.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    {% block summernote %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+    {% endblock %}
+
+    
+    <title>Flower house {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="container-fluid fixed-top bg-transparent">
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-white text-black">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+            </div>            
+        </div>
+        <div id="topnav" class="row  pt-lg-2 d-none d-lg-flex p-3 mb-2 text-md-start" style="background-color: #8E5252;">
+            
+            <div class="dropdown col-2 col-lg-1 my-auto py-0 py-lg-0">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                    <a href=# class="dropdown-item">Birthday Flowers</a>
+                    <a href=# class="dropdown-item">Bouquets</a>
+                    <a href=# class="dropdown-item">Wedding flowers</a>
+                    <a href=# class="dropdown-item">All Products</a>
+                </div>
+            </div>
+            <div class="col-2 col-lg-1 my-auto py-0 py-lg-0">
+                <a href=# class="nav-link main-logo-link text-uppercase text-white">
+                    Blog
+                </a>
+            </div>
+            <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
+                <form method="GET" action="#">
+                    <div class="input-group">
+                        <input class="form-control bg-transparent text-white" type="text" name="q" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-transparent" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search text-white"></i>
+                                </span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
+                <a href=# class="nav-link main-logo-link">
+                    <h2 class="logo-font text-white my-0 fs-1"> Flower House</h2>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 my-auto py-0 py-lg-0 d-flex justify-content-end align-items-center">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center text-white">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <h4 class="my-0"> {{ user.username }} </h4>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                          
+                                <a href=# class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href=# class="dropdown-item">My Profile</a>
+                                <a href=# class="dropdown-item">Favorites</a>
+                                <a href=# class="dropdown-item">My Bag</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <h5 class="my-0"> Register/Login </h5>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                      
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                   
+                </ul>
+                <div class="list-inline-item ml-3">
+                    <a class="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="#">
+                        <div class="text-center">
+                            <div><i class="fas fa-heart fa-lg"></i></div>
+                            
+                            <br>
+                        </div>
+                    </a>
+                </div>
+                <div class="list-inline-item ml-3">
+                    <a class="{% if grand_total %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="#">
+                        <div class="text-center">
+                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <p class="my-0 text-white">
+                                {% if grand_total %}
+                               <p class="text-danger"> ${{ grand_total|floatformat:2 }}</p>
+                                {% else %}
+                                <p class="text-white">$0.00</p>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% include 'includes/mobile-top-header.html' %}
+    </header>
+  <!--
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toast/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toast/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toast/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toast/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    -->
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+<footer id="footer" class="container-wrapper" >
+    <div class="container quotes-container content-container" style="background-color: rgba(204, 191, 191, 0.5); height: 100%; margin-top: -2em;">
+      <section class="footer text-white">
+        <div class="row">
+          <div class="col-12 page-header mb-4">
+            <h2 class="text-uppercase text-center text-white">Stay in touch:</h2>
+            <hr class="block-divider block-divider--short">
+          </div>
+       </div>
+       <div class="row">
+         <div class="col-12 col-md-6">
+           <h3>Social</h3>
+           <p>Keep up to date with all our latest offers</p>
+           <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+         </div>
+        <div class="col-12 col-md-6">
+           <!-- Mailchimp signup form here -->
+       
+            </div>
+        </section>    
+    </div>
+</footer>
+<!-- /.footer -->
+
+
+    
+    {% endblock %}
+
+    
+  </body>
+</html>
