@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from django.db.models import Q
 from django.contrib import messages
-
-# Create your views here.
+from django.contrib.auth.decorators import login_required
+from django.db.models.functions import Lower
 
 
 def all_products(request):
@@ -28,7 +28,6 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
