@@ -74,6 +74,11 @@
                     <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                 </div>
             </div>
+            <div class="col-2 col-lg-1 my-auto py-0 py-lg-0">
+                <a href="#" class="nav-link main-logo-link text-uppercase text-white">
+                    Blog
+                </a>
+            </div>
             <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
                 <form method="GET" action="#">
                     <div class="input-group">
@@ -93,7 +98,6 @@
                     <h2 class="logo-font text-white my-0 fs-1"> Flower House</h2>
                 </a>
             </div>
-            
             <div class="col-lg-4 my-auto py-0 py-lg-0 d-flex justify-content-end align-items-center">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -106,12 +110,12 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                        
-                                <a href=# class="dropdown-item">Product Management</a>
+                          
+                                <a href="#" class="dropdown-item">Product Management</a>
                                 {% endif %}
-                                <a href=# class="dropdown-item">My Profile</a>
-                                <a href="{% url 'favorites'%}" class="dropdown-item">Favorites</a>
-                                <a href=# class="dropdown-item">My Bag</a>
+                                <a href="#" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'favorites' %}" class="dropdown-item">Favorites</a>
+                                <a href="{% url 'view_bag' %}" class="dropdown-item">My Bag</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                             <h5 class="my-0"> Register/Login </h5>
@@ -127,7 +131,7 @@
                    
                 </ul>
                 <div class="list-inline-item ml-3">
-                    <a  href="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'favorites' %}">
+                    <a class="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'favorites' %}">
                         <div class="text-center">
                             <div><i class="fas fa-heart fa-lg"></i></div>
                             
@@ -136,15 +140,22 @@
                     </a>
                 </div>
                 <div class="list-inline-item ml-3">
-                    <a  href="{% url 'view_bag' %}">
+                    <a class="{% if grand_total %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_bag' %}">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                           
+                            <p class="my-0 text-white">
+                                {% if grand_total %}
+                               <p class="text-danger"> ${{ grand_total|floatformat:2 }}</p>
+                                {% else %}
+                                <p class="text-white">$0.00</p>
+                                {% endif %}
+                            </p>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
+           
        {% include 'includes/mobile-top-header.html' %}
     </header>
     {% if messages %}
@@ -191,6 +202,7 @@
          </div>
         <div class="col-12 col-md-6">
            <!-- Mailchimp signup form here -->
+           
        
             </div>
         </section>    
