@@ -60,6 +60,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+
     is_favorite = False
     if request.user.is_authenticated:
         is_favorite = ProductsFavorites.objects.filter(user=request.user, product=product).exists()
@@ -110,3 +111,68 @@ def remove_from_favorites(request, product_id):
         messages.warning(request, 'The product was not in your favorites.')
 
     return redirect('product_detail', product_id=product_id)
+
+def render_reviews(request):
+    reviews = Review.objects.all()
+    form = ReviewForm()
+
+    context = {'reviews': reviews, 'review_form': form}
+    return render(request, 'product_detail.html', context)
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST or None)
+        if review_form.is_valid():
+            data = review_form.save(commit=False)
+            data.user = request.user
+            data.product = product
+            data.save()
+            messages.success(request, 'Successfully added review!')
+            return redirect(reverse('product_detail',
+                                    args=[product.id]))
+        else:
+            form = ReviewForm()
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+
+    context = {'form': form}
+
+    return render(request, context)
+
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Your review has been edited!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Error! Please try again.')
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, 'Your review is now edited!')
+
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+
+    return render(request, 'product_detail.html', context)
+
+
+def delete_review(request, review_id):
+
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+    review.delete()
+    messages.success(request, 'Your review is now deleted!')
+    return redirect(reverse('product_detail', args=[product.id]))
