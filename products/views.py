@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Product, Category
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Product, Category, ProductsFavorites
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -60,8 +60,53 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    is_favorite = False
+    if request.user.is_authenticated:
+        is_favorite = ProductsFavorites.objects.filter(user=request.user, product=product).exists()
+
+
     context = {
         'product': product,
+        'is_favorite': is_favorite,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+@login_required
+def favorites(request):
+    favorite_products = Product.objects.filter(productsfavorites__user=request.user)
+
+    context = {
+        'favorite_products': favorite_products
+    }
+    return render(request, 'products/favorites.html', context)
+
+
+@login_required
+def add_to_favorites(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    user = request.user
+
+    if user.productsfavorites_set.filter(product=product).exists():
+        messages.warning(request, 'The product is already in your favorites.')
+    else:
+        ProductsFavorites.objects.create(user=user, product=product)
+        messages.success(request, 'The product has been added to your favorites.')
+
+    return redirect('product_detail', product_id=product.id)
+
+
+@login_required
+def remove_from_favorites(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    user = request.user
+
+    favorites_item = user.productsfavorites_set.filter(product=product).first()
+
+    if favorites_item:
+        favorites_item.delete()
+        messages.success(request, 'The product has been removed from your favorites.')
+    else:
+        messages.warning(request, 'The product was not in your favorites.')
+
+    return redirect('product_detail', product_id=product_id)

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% include 'includes/navigation_bar.html' %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+   
+   
+{% endblock %}
+
+{% block content %}
+
+
+<br><br><br><br>
+<section class="w-100 h-100 bg-white">
+  <div class="container py-5 h-100">
+    <div class="row">
+      <div class="col">
+        <hr>
+        <h1 class="text-center text-uppercase">Your Favorite Products</h1>
+        <hr>
+      </div>
+    </div>
+
+{% if favorite_products %}
+<div class="row">
+  {% for product in favorite_products %}
+    <div class="col-md-3">
+      <div class="row">
+        
+        <a href="{% url 'product_detail' product.pk %}">
+          <img class="img-fluid card" src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 200px; height: 150px; border-radius: 1em;">
+          <p>{{ product.name }}</p>
+          <p class="text-danger">{{ product.price }}</p>
+          <a href="{% url 'remove_from_favorites' product.id %}">
+            <i class="fa-solid fa-x"></i>
+        </a>
+        </a>
+       
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="row">
+  
+    <p class="text-center">You have no favorite products yet.</p>
+  
+</div>
+{% endif %}
+
+</div>
+</section>
+{% endblock %}
+
+

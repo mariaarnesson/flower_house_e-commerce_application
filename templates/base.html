@@ -110,7 +110,7 @@
                                 <a href=# class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href=# class="dropdown-item">My Profile</a>
-                                <a href=# class="dropdown-item">Favorites</a>
+                                <a href="{% url 'favorites'%}" class="dropdown-item">Favorites</a>
                                 <a href=# class="dropdown-item">My Bag</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
@@ -127,7 +127,7 @@
                    
                 </ul>
                 <div class="list-inline-item ml-3">
-                    <a  href="#">
+                    <a  href="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'favorites' %}">
                         <div class="text-center">
                             <div><i class="fas fa-heart fa-lg"></i></div>
                             
@@ -136,7 +136,7 @@
                     </a>
                 </div>
                 <div class="list-inline-item ml-3">
-                    <a href="#">
+                    <a class=#>
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                            
@@ -149,6 +149,7 @@
     </header>
     {% if messages %}
         <div class="message-container">
+            
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
@@ -162,6 +163,7 @@
                     {% endif %}
                 {% endwith %}
             {% endfor %}
+            
         </div>
 
     {% endif %}

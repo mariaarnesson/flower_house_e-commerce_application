@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+<br><br><br><br><br><br>
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
@@ -28,6 +29,41 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
+                    {% if request.user.is_authenticated %}
+                    {% if is_favorite %}
+                    <a href="{% url 'remove_from_favorites' product.id %}">
+                        <i class="fas fa-heart fa-lg text-danger"></i>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'add_to_favorites' product.id %}">
+                    <i class="fa-regular fa-heart fa-lg"></i>
+                    </a>
+                    {% endif %}
+                    {% else %}
+                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                        <i class="fa-regular fa-heart fa-sm heart-icon"></i>
+                    </a>
+                    {% endif %}
+                    
+                    <!-- Favorite Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>You need to log in to add this product to your favorites.</p>
+                                    <a href="{% url 'account_signup' %}" class="btn btn-secondary">Register</a>
+                                    <a href="{% url 'account_login' %}" class="btn btn-secondary">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <p class="mb-0">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     {% if product.rating %}
