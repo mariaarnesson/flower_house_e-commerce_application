@@ -132,6 +132,9 @@
         </div>
     </div>
 {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
@@ -152,3 +155,4 @@
          });
     })
 </script>
+{% endblock %}
