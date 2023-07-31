@@ -44,22 +44,6 @@ card.addEventListener('change', function (event) {
     }
 });
 
-// Handle realtime validation errors on the card element
-card.addEventListener('change', function (event) {
-    var errorDiv = document.getElementById('card-errors');
-    if (event.error) {
-        var html = `
-            <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-            </span>
-            <span>${event.error.message}</span>
-        `;
-        $(errorDiv).html(html);
-    } else {
-        errorDiv.textContent = '';
-    }
-});
-
 // Handle form submit
 var form = document.getElementById('payment-form');
 
@@ -69,6 +53,7 @@ form.addEventListener('submit', function(ev) {
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
@@ -127,4 +112,8 @@ form.addEventListener('submit', function(ev) {
                 }
             }
         });
-    });
+    }).fail(function () {
+        // just reload the page, the error will be in django messages
+        location.reload();
+    })
+});

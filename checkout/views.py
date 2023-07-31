@@ -8,11 +8,16 @@ from products.models import Product
 from .models import Order, OrderLineItem
 
 import stripe
+import json
 
 @require_POST
 def cache_checkout_data(request):
     try:
-        pid = request.POST.get('client_secret').split('_secret')[0]
+        pid = request.POST.get('client_secret', None)
+        if pid is None:
+            raise ValueError("The 'client_secret' field is missing from the request.")
+        
+        pid = pid.split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
@@ -26,9 +31,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-
 def checkout(request):
-
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -48,7 +51,15 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret', None)
+            if pid is None:
+                raise ValueError("The 'client_secret' field is missing from the request.")
+            
+            pid = pid.split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -60,14 +71,13 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for quantity in item_data['items_by_price'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                
-                            )
-                            order_line_item.save()
+                        messages.error(request, (
+                            "Invalid quantity for product {}. "
+                            "Please call us for assistance!".format(product.name))
+                        )
+                        order.delete()
+                        return redirect(reverse('view_bag'))
+
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -80,7 +90,7 @@ def checkout(request):
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+                Please double-check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -98,19 +108,19 @@ def checkout(request):
 
         order_form = OrderForm()
 
-        if not stripe_public_key:
-            messages.warning(request, 'Stripe public key is missing. \
-                Did you forget to set it in your environment?')
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
 
-        template = 'checkout/checkout.html'
-        context = {
-            'order_form': order_form,
-            'stripe_public_key': stripe_public_key,
-            'client_secret': intent.client_secret,
+    template = 'checkout/checkout.html'
+    context = {
+        'order_form': order_form,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
+    }
 
-        }
+    return render(request, template, context)
 
-        return render(request, template, context)
 
 def checkout_success(request, order_number):
     """
