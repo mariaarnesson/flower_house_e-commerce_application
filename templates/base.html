@@ -113,7 +113,7 @@
                           
                                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
-                                <a href="#" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'favorites' %}" class="dropdown-item">Favorites</a>
                                 <a href="{% url 'view_bag' %}" class="dropdown-item">My Bag</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
