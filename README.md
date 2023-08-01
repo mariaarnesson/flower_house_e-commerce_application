@@ -210,7 +210,7 @@ On the [GitPod Page](https://gitpod.io/workspaces), on the top right side, there
 Next you should install Django and supporting libraries:
 1. Install Django and gunicorn with command in terminal: 'pip3 install django gunicorn'
 2. Install supporting libraries with command in terminal: 'pip3 install dj_database_url psycopg2'
-
+3. Install 'pip3 install django-storages'
 4. Create requirements file with command in terminal: 'pip3 freeze --local > requirements.txt'
 5. Create Project with command in terminal: 'django-admin startproject PROJ_NAME .'
 6. Create App with command in terminal: 'python3 manage.py startapp APP_NAME'
@@ -224,6 +224,19 @@ Now you should create a new env.py file on top of directory level and include da
 
 Now you should create Procfile on the top level directory and type 'web: gunicorn PROJ_NAME.wsgi'.
 
+- Stripe
+Log in to Stripe, click the developers link, and then API Keys
+Add them as Config Vars in Heroku
+Create a new webhook endpoint in the developer's menu by clicking add endpoint.
+Add the URL for our Heroku app, followed by /checkout/WH and select receive all events and add endpoint.
+Add the webhooks signing secret to the Heroku config variables.
+
+In terminal you should add:
+- export STRIPE_PUBLIC_KEY=(provide your stripe public key value)
+- export STRIPE_SECRET_KEY=(provide your stripe secret key value)
+- export STRIPE_WH_SECRET=(provide your webhook public key value)
+
+
 
 ## Connecting the Heroku application to the GitHub repository
 
@@ -231,6 +244,73 @@ On the [Heroku page](https://dashboard.heroku.com), select the panel of your app
 
 I use the option: 'Manual deploy'. Next to a option: 'Choose a branch to deploy', select: 'main' and press button: 'Deploy Branch'. You have to wait a while while branch main builds up. When the branch is build and completed successfully, you will see a message: 'Your app was successfully deployed' and a button: 'View'. Enter 'View' to see the live project.
 The live link can be found here - [View the live project here](https://flowerhouse-3853febb8d54.herokuapp.com/).
+
+## Set up Amazon Web Services' S3
+
+- Create an AWS Account by going to aws.amazon.com.
+- Create a new bucket, give it a name and choose the region which isnclosest to you.
+- Uncheck Block all public access, to make bucket public.
+- From Object Ownership, make sure to have ACLs enabled, and Bucket owner preferred selected.
+- From the Properties tab, turn on static website hosting, and type index.html and error.html in their respective field and save that.
+- Paste in the following CORS configuration to the Permissions tab:
+[
+	{
+		"AllowedHeaders": [
+			"Authorization"
+		],
+		"AllowedMethods": [
+			"GET"
+		],
+		"AllowedOrigins": [
+			"*"
+		],
+		"ExposeHeaders": []
+	}
+]
+
+Copy your ARN string.
+
+From the Bucket Policy tab, select the Policy Generator link, and use the following steps:
+
+Policy Type: S3 Bucket Policy
+
+Effect: Allow
+
+Principal: *
+
+Actions: GetObject
+
+Amazon Resource Name (ARN): paste-your-ARN-here
+
+Click Add Statement
+
+Click Generate Policy
+
+Copy the entire Policy, and paste it into the Bucket Policy Editor
+
+{
+	"Id": "Policy1234567890",
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Stmt1234567890",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Effect": "Allow",
+			"Resource": "arn:aws:s3:::your-bucket-name/*"
+			"Principal": "*",
+		}
+	]
+}
+- add /* to the end of the Resource key in the Bucket Policy Editor (like above) and save.
+
+- From the Access Control List (ACL) section, click "Edit" and enable List for Everyone (public access), and accept the warning box.
+
+- If the edit button is disabled, you need to change the Object Ownership section above to ACLs enabled (mentioned above).
+
+- Download the CSV file with the secret keys.
+
 
 
 ## The final steps that should be taken to deploy the application:
