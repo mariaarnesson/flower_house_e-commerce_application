@@ -72,7 +72,13 @@ The navigation bar is structured as follows:
     - Log in
     - Sign up
 If the user is authenicated, on the right side should be:
-     - dragdown with the user's icon and the username, after pressing on it, the user can choose one of the options:
-        - User Profile
-        - Log out
-    - icon with a handbag, after pressing on it, the user can go to the page with the list of products that the user has added to the basket.
+- dragdown with the user's icon and the username, after pressing on it, the user can choose one of the options:
+    - User Profile
+    - Log out
+- icon with a handbag, after pressing on it, the user can go to the page with the list of products that the user has added to the basket.
+
+- This is what the navigation bar looks like when a user is logged in:
+![nav logged in](media/navigation_bar_user_loggedin.png)
+
+- This is what the navigation bar looks like when a user is not logged in:
+![nav user not logged in](media/navigation_bar_user_not_logged_in.png)
