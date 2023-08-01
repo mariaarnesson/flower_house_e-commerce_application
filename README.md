@@ -107,5 +107,53 @@ If the user is authenicated, on the right side should be:
   - Products in category Wedding flowers.
 
   ![wedding flowers all products](media/wedding_flowers.jpeg)
+
+### Product Detail Page
+
+On the product details page, the user has access to see a larger size image of the product, and other details such as: 
+  - a heart icon which make a user possibility to add a product to favorites page.
+  - title of the product
+  - price of the product 
+  - product's category
+  - rating
+  - product's description
+
+ Below that the user has the opportunity to rating the product and leave own review. 
+ Below that is the possibility to order a quantity of the product. 
+ At the very end, the user should choose whether he/she wants to continue to the page with the ordered products, or stay on the product page to add more products to the basket.
+
+#### If a user is not authenticated:
+
+A user who is not logged in can see the products existing on the site and the product details page. However, the products will not be added to the bag. The user cannot leave a review before logging in.
+![prodcut detail user is not authenicated](media/product_detail_user_not_authenicated.jpeg)
+
+When the user presses the heart icon, the modal with the message below is displayed:
+![modal favorites](media/modal_favorites.png)
+
+#### If a user is authenticated:
+
+When a user is logged in, he has the ability to leave a review, edit and delete it. By pressing the heart icon, the product is added to the favorites page, and by selecting the quantity and pressing the 'ADD TO BAG' button, the product is added to the bag.
+![product detail user is authenicated](media/product_detail_user_is_athenicated.jpeg)
+![review comment added](media/reviews_comment_added.png)
+![edit review](media/edit_review.png)
+
+
+### Product Management
+
+On the 'Product Management' page, the Site Administrator has the ability to add, edit or remove a product available for purchase.
+
+![Add product](media/add_product.png)
+
+![Edit Product](media/edit_product.jpeg)
+
+### Blog Page
+
+
+![blog categories](media/blog_categories.png)
+![post1](media/post1.png)
+![post2](media/post2.png)
+
+
+
  
 
