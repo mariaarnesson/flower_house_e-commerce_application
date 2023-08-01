@@ -13,6 +13,8 @@ This is e-commerce application which is built to make it easy for customers to f
  # User Experience (UX)
 ## USER STORIES:
 
+[Kanban board](https://github.com/users/mariaarnesson/projects/18/views/1) with my defined [USER STORIES](https://github.com/mariaarnesson/florist_shop/issues) and their acceptance criteria are available here.
+
 - USER STORY: SEO #1
   - As a **Site User** I can **find the site through web searches** so that I can **easily access the site**
 - USER STORY: ERROR 404 OR 500 #2
