@@ -1,0 +1,1 @@
+web: gunicorn flower_house.wsgi:application

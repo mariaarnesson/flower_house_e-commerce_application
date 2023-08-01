@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-l+m!=182mxiin)tf1)qt+r)w1q$$ma8_s)wvcl-@kl8hgye++(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mariaarness-flowerhouse-zu4xfcnhecf.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-mariaarness-flowerhouse-zu4xfcnhecf.ws-eu102.gitpod.io', 'localhost', 'flowerhouse-3853febb8d54.herokuapp.com']
 
 
 # Application definition
@@ -123,12 +124,17 @@ WSGI_APPLICATION = 'flower_house.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
