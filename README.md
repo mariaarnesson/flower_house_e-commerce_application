@@ -153,6 +153,15 @@ On the 'Product Management' page, the Site Administrator has the ability to add,
 ![post1](media/post1.png)
 ![post2](media/post2.png)
 
+## Diagram
+
+![Diagram](media/diagram.png)
+
+## Wireframes
+- [Home Page- Desktop](media/wireframes/homepage_desktop.png)
+- [Products- Desktop](media/wireframes/products_desktop.png)
+- [Product Detail Desktop](media/wireframes/product_detail_desktop.png)
+- []
 
 
  
