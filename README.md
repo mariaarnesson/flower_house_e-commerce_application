@@ -55,3 +55,24 @@ This is e-commerce application which is built to make it easy for customers to f
   - As a **Site User** I can **use navigation menu** to **switch to other options**
 - USER STORY: Admin account #23
   - As a **Admin** I can **access to all products details**
+
+
+# Features
+## Existing Features
+
+### Navigation bar   
+Below are descriptions of the main features of the application. Many of the features are based on the Boutique Ado walkthrough project and SEO and Web Marketing modules of the course.
+
+The navigation bar is structured as follows:
+- on the left side, in the first place, there is an option: 'About us', after pressing it, the user can see information about the florist.
+- another of the option is a blog, where the user can see the news about the florist, as well as discounts and other curiosities.
+- next is a dropdown called: 'Shop' from the behavior of products for sale.
+- after that there is the 'search' option where the user can search for a specific product, or just any word that is used in the product description, by which the user can easily find what needs.
+- If the user is not authenicated, he/she should see two buttons on the right side:
+    - Log in
+    - Sign up
+If the user is authenicated, on the right side should be:
+     - dragdown with the user's icon and the username, after pressing on it, the user can choose one of the options:
+        - User Profile
+        - Log out
+    - icon with a handbag, after pressing on it, the user can go to the page with the list of products that the user has added to the basket.
