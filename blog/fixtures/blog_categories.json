@@ -1,0 +1,15 @@
+[
+    {
+      "pk": 1,
+        "name": "Flower Tips",
+        "image_url": "https://img.freepik.com/free-photo/female-florist-making-beautiful-bouquet-flower-shop_155003-6246.jpg?w=1060&t=st=1690870098~exp=1690870698~hmac=b85f0b37c3b1b790cb4ae46f3d1c4ebb6e17539ca83c9cb99be45a83b92f01d1",
+        "image": "flower_tips.png"
+      },
+      {
+        "pk": 1,
+          "name": "Flower Decoration",
+          "image_url": "https://img.freepik.com/free-photo/wedding-decor-concept-decoration-chairs-flowers_501050-516.jpg?w=1060&t=st=1690896872~exp=1690897472~hmac=c67cd7532f6f54e3a20a2a625c6096d8ff0256541fa12cce8c398c939b7b0068",
+          "image": "Skärmbild_2023-08-01_153545.png"
+        }
+   
+  ]

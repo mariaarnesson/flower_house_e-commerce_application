@@ -11,8 +11,11 @@
 
 {% block content %}
 <br><br><br><br><br><br>
-    <div class="overlay"></div>
+    <div class="overlay">
+        
+    </div>
     <div class="container-fluid">
+        
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
@@ -42,9 +45,25 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-7 col-lg-3 my-auto py-0 py-lg-0">
+                <form method="GET" action="#">
+                    <div class="input-group">
+                        <input class="form-control bg-transparent text-white" type="text" name="q" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-transparent" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search text-white"></i>
+                                </span>
+                            </button>
+                        </div>             
+                    </div>
+                </form>
+            </div>
             <div class="product-container col-10 offset-1">
+                
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
