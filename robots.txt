@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://flowerhouse-3853febb8d54.herokuapp.com/sitemap.xml
