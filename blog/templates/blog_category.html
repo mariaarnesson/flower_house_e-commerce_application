@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+
+
+<br><br><br><br>
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+       
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            
+                <h3 class=" text-md-start">"Happiness held is the seed; Happiness shared is the flower."</h2>
+                <h2 class="">John Harrigan</h3>
+                  
+            
+        </div>
+      </div>
+    </div>
+<br><br><br>
+
+
+
+<div class="container py-5 h-100">
+  
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    {% for category in categories %}  
+    <div class="bg-image">
+            
+                <img src="{{ category.image.url }}"alt="{{ category.name }}" 
+                class="img-thumbnail" style="width: 16em; height:11em;">
+            
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <a href="{% url 'post_list' %}?category={{ category.name }}" class="btn btn-secondary text-white mb-0"> {{ category.name }} </a>
+            </div>
+         
+           
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+
+
+
+ 
+
+
+<div class="divider d-flex align-items-center my-4">
+    <p class="text-center fw-bold mx-3 mb-0">Current</p>
+</div>
+
+{% endblock %}
