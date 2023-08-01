@@ -82,3 +82,30 @@ If the user is authenicated, on the right side should be:
 
 - This is what the navigation bar looks like when a user is not logged in:
 ![nav user not logged in](media/navigation_bar_user_not_logged_in.png)
+
+#### Home Page
+
+#### Prodcts Page
+- In a very simple way, using the navigation bar, the user can see all the products, or if she/ he prefers, go straight to a specific category, or use the search option to find what the user wants. The list of products available on the page for purchase includes: product name, price, category, rating. At the top of the page can user also see how many products are on the page.
+
+##### All Products:
+![products categories](media/products_categories.png)
+![all products](media/all_products.jpeg)
+
+
+##### Products Categories
+  When the user selects one of the categories, the category photo, title and description are displayed. All products from the given category are displayed below:
+
+  - Products in category Birthday flower.
+  ![birthday flowers](media/birthday_flowers.jpeg)
+
+   - Products in category Bouquets.
+
+  ![bouquets category all products](media/bouquets.jpeg)
+  
+
+  - Products in category Wedding flowers.
+
+  ![wedding flowers all products](media/wedding_flowers.jpeg)
+ 
+
