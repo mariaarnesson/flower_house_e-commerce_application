@@ -138,16 +138,10 @@ def delete_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
-        product.delete()
-        messages.success(request, 'Product deleted!')
-        return redirect(reverse('products'))
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
 
-    context = {
-        'form': form,
-        'product': product,
-    }
-    return render(request, 'delete_product.html', context)
 
 @login_required
 def favorites(request):
