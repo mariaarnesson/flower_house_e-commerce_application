@@ -1,0 +1,7 @@
+body {
+    background: url(https://img.freepik.com/free-photo/flat-lay-frame-with-white-flowers-background_23-2148427792.jpg?w=1060&t=st=1689668585~exp=1689669185~hmac=ad4437531db3964033664a35a3a1535180c0768859c2834d178de734d73be4a3) center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #1c1313;
+    font-family: 'Tillana', cursive;
+}
