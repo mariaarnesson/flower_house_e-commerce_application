@@ -15,7 +15,7 @@
 {% block content %}
 
 
-<br><br><br><br>
+
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
        
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-<br><br><br>
+
 
 
 
@@ -39,7 +39,7 @@
     <div class="bg-image">
             
                 <img src="{{ category.image.url }}"alt="{{ category.name }}" 
-                class="img-thumbnail" style="width: 16em; height:11em;">
+                class="img-thumbnail" style="width: 25em; height:20em;">
             
             <div class="d-flex justify-content-center align-items-center h-100">
               <a href="{% url 'post_list' %}?category={{ category.name }}" class="btn btn-secondary text-white mb-0"> {{ category.name }} </a>
@@ -51,13 +51,5 @@
     </div>
   </div>
 
-
-
- 
-
-
-<div class="divider d-flex align-items-center my-4">
-    <p class="text-center fw-bold mx-3 mb-0">Current</p>
-</div>
 
 {% endblock %}

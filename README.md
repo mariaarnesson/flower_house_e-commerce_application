@@ -475,7 +475,7 @@ This is evidence of either a real Facebook business page for the purposes of dig
 - [sunflowers description](https://www.bloomandwild.com/meaning-and-symbolism-of-sunflowers)
 - [inpiration flower description](https://laflora.pl/)
 - [Take care roses](https://www.floom.com/pages/how-to-care-for-cut-roses)
-
+- [How flowers have a positive effect on our mood](https://unlimitedgreens.com/blogs/blog/how-do-flowers-have-a-positive-impact-on-our-mood)
 
  
 
