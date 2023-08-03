@@ -24,9 +24,9 @@
         <hr>
       </div>
     </div>
-
+    <div class="container d-flex flex-wrap">
 {% if favorite_products %}
-<div class="row">
+
   {% for product in favorite_products %}
     <div class="col-md-3">
       <div class="row">
@@ -43,7 +43,7 @@
       </div>
     </div>
   {% endfor %}
-</div>
+
 {% else %}
 <div class="row">
   
