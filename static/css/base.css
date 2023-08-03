@@ -24,11 +24,15 @@ h2 {
     background-image: url('https://img.freepik.com/free-photo/bouquet-white-roses_144627-416.jpg?w=1060&t=st=1690895629~exp=1690896229~hmac=ad8eab69d3c5636a6b27c5abc2cde93b5199bf2180b1ab32dc7df167d2093a28');
     height: 100%;
     background-size: cover;
+    position: relative;
 }
 .mask {
     background-color: rgba(21, 17, 17, 0.6); 
-    height: 153%; 
-    margin:-17%;"
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 #footer {
    
