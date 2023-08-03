@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -61,12 +61,17 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    form = ReviewForm()
+    reviews = product.reviews.filter()
+
     is_favorite = False
     if request.user.is_authenticated:
         is_favorite = ProductsFavorites.objects.filter(user=request.user, product=product).exists()
 
     context = {
         'product': product,
+        'form': 'form',
+        'reviews': reviews,
         'is_favorite': is_favorite,
     }
 
@@ -181,6 +186,7 @@ def remove_from_favorites(request, product_id):
         messages.warning(request, 'The product was not in your favorites.')
 
     return redirect('product_detail', product_id=product_id)
+
 
 def render_reviews(request):
     reviews = Review.objects.all()
