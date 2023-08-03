@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .forms import ProductForm, ReviewForm
+from django.core.paginator import Paginator
 
 
 def all_products(request):
@@ -165,9 +166,11 @@ def favorites(request):
     favorite_products = Product.objects.filter(
         productsfavorites__user=request.user
     )
-
+    paginator = Paginator(favorite_products, 8)
+    page_number = request.GET.get('page')
+    favorite_products_page = paginator.get_page(page_number)
     context = {
-        'favorite_products': favorite_products
+        'favorite_products': favorite_products_page
     }
     return render(request, 'products/favorites.html', context)
 
