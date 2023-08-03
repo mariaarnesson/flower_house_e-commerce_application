@@ -17,8 +17,13 @@
   - [JSHint](https://jshint.com/) was used to validatw JS.
 
 - Pep8 Python
-  - [Python pep8](https://pep8ci.herokuapp.com/#) was used to validate Python code.    
+  - [Python pep8](https://pep8ci.herokuapp.com/#) was used to validate Python code.
+
+  -  Result for Bag bag_tools.py:
+    - [Result Bag bag_tools.py ](media/test/result_pep8bagtools.png)
 ## Manual Testing 
+
+
 ### User Stories Testing
 
 1 USER STORY: SEO #1
