@@ -38,10 +38,16 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!"
+                )
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = (
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+            )
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -66,7 +72,10 @@ def product_detail(request, product_id):
 
     is_favorite = False
     if request.user.is_authenticated:
-        is_favorite = ProductsFavorites.objects.filter(user=request.user, product=product).exists()
+        is_favorite = ProductsFavorites.objects.filter(
+            user=request.user,
+            product=product
+        ).exists()
 
     context = {
         'product': product,
@@ -92,10 +101,13 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail',  args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm()
-    
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -150,7 +162,9 @@ def delete_product(request, product_id):
 
 @login_required
 def favorites(request):
-    favorite_products = Product.objects.filter(productsfavorites__user=request.user)
+    favorite_products = Product.objects.filter(
+        productsfavorites__user=request.user
+    )
 
     context = {
         'favorite_products': favorite_products
@@ -167,7 +181,10 @@ def add_to_favorites(request, product_id):
         messages.warning(request, 'The product is already in your favorites.')
     else:
         ProductsFavorites.objects.create(user=user, product=product)
-        messages.success(request, 'The product has been added to your favorites.')
+        messages.success(
+            request,
+            'The product has been added to your favorites.'
+        )
 
     return redirect('product_detail', product_id=product.id)
 
@@ -181,7 +198,10 @@ def remove_from_favorites(request, product_id):
 
     if favorites_item:
         favorites_item.delete()
-        messages.success(request, 'The product has been removed from your favorites.')
+        messages.success(
+            request,
+            'The product has been removed from your favorites.'
+        )
     else:
         messages.warning(request, 'The product was not in your favorites.')
 
@@ -211,7 +231,10 @@ def add_review(request, product_id):
                                     args=[product.id]))
         else:
             form = ReviewForm()
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+            )
 
     context = {'form': form}
 

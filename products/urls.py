@@ -9,8 +9,16 @@ urlpatterns = [
     path('delete/<int:product_id>/',
          views.delete_product,
          name='delete_product'),
-    path('products/add_to_favorites/<int:product_id>/', views.add_to_favorites, name='add_to_favorites'),
-    path('remove_from_favorites/<int:product_id>/', views.remove_from_favorites, name='remove_from_favorites'),
+    path(
+          'products/add_to_favorites/<int:product_id>/',
+          views.add_to_favorites,
+          name='add_to_favorites'
+      ),
+    path(
+          'remove_from_favorites/<int:product_id>/',
+          views.remove_from_favorites,
+          name='remove_from_favorites'
+      ),
     path('products/favorites/', views.favorites, name='favorites'),
     path('add_review/<int:product_id>/',
          views.add_review,
