@@ -20,7 +20,7 @@ urlpatterns = [
           name='remove_from_favorites'
       ),
     path('products/favorites/', views.favorites, name='favorites'),
-    path('add_review/<int:product_id>/',
+    path('products/add_review/<int:product_id>/',
          views.add_review,
          name='add_review'),
     path('edit_review/<int:review_id>/',

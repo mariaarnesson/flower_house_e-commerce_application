@@ -35,10 +35,34 @@ h2 {
     left: 0;
 }
 #footer {
+    padding-top: 30px; 
+    padding-bottom: 30px;
    
-   
-   margin-top: 12%;
 }
+.quotes-container {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  @media (max-width: 767px) {
+   
+    .quotes-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  
+  
+  
+  
+  
+  
+
+
 .background {
     height: 41em;
     background-color: #fff;

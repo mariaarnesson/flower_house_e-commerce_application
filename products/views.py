@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Product, Category, ProductsFavorites
+from .models import Product, Category, ProductsFavorites, Review
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -234,10 +234,7 @@ def add_review(request, product_id):
                                     args=[product.id]))
         else:
             form = ReviewForm()
-            messages.error(
-                request,
-                'Failed to add product. Please ensure the form is valid.'
-            )
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
 
     context = {'form': form}
 
