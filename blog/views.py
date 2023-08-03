@@ -23,7 +23,10 @@ def post_list(request):
     selected_category = request.GET.get('category')
 
     if selected_category:
-        queryset = BlogPost.objects.filter(blog_category__name=selected_category, status=1).order_by("-created_on")
+        queryset = BlogPost.objects.filter(
+            blog_category__name=selected_category,
+            status=1
+        ).order_by("-created_on")
     else:
         queryset = BlogPost.objects.filter(status=1).order_by("-created_on")
 
@@ -39,6 +42,7 @@ def post_list(request):
             "selected_category": selected_category,
         }
     )
+
 
 def post_detail(request, slug):
     queryset = BlogPost.objects.filter(status=1)
@@ -58,7 +62,6 @@ def post_detail(request, slug):
             comment.save()
     else:
         comment_form = CommentForm()
-
 
     return render(
         request,
