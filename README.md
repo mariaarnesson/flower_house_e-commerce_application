@@ -247,6 +247,8 @@ The live link can be found here - [View the live project here](https://flowerhou
 
 ## Set up Amazon Web Services' S3
 
+[AWS setup new UI](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf)
+
 - Create an AWS Account by going to aws.amazon.com.
 - Create a new bucket, give it a name and choose the region which isnclosest to you.
 - Uncheck Block all public access, to make bucket public.
