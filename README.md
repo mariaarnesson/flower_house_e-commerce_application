@@ -126,11 +126,13 @@ On the product details page, the user has access to see a larger size image of t
 
 #### If a user is not authenticated:
 
-A user who is not logged in can see the products existing on the site and the product details page. However, the products will not be added to the bag. The user cannot leave a review before logging in.
+A user who is not logged in can see the products existing on the site and the product details page. The user cannot leave a review before logging in.
 ![prodcut detail user is not authenicated](media/product_detail_user_not_authenicated.jpeg)
 
 When the user presses the heart icon, the modal with the message below is displayed:
 ![modal favorites](media/modal_favorites.png)
+
+However, if the user presses the 'ADD TO BAG' button, the product will be added to the bag even if the user is not logged in to give the opportunity to make a purchase without logging in.
 
 #### If a user is authenticated:
 
