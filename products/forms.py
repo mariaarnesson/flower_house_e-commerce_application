@@ -24,17 +24,9 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['rating', 'comment']
-        labels = {
-            'rating': 'Rating',
-            'comment': 'Comment',
-        }
-        widgets = {
-            'rating': forms.NumberInput(attrs={
-                'min': 1,
-                'max': 5,
-                'step': 1,
-            }),
-            'comment': forms.Textarea(attrs={
-                'rows': 4,
-            }),
-        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['rating'].label = 'Rating'
+        self.fields['comment'].label = 'Comment'
+        self.fields['comment'].widget = forms.Textarea(attrs={'placeholder': 'Write your review here...', 'rows': 4})

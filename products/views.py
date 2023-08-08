@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 from django.core.paginator import Paginator
 
 
@@ -67,7 +67,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    review_form = ReviewForm()
     
 
     is_favorite = False
@@ -77,10 +77,19 @@ def product_detail(request, product_id):
             product=product
         ).exists()
 
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, 'Review added successfully!')
+
     context = {
         'product': product,
         'form': 'form',
-       
+        'form': review_form,
         'is_favorite': is_favorite,
     }
 
@@ -209,5 +218,14 @@ def remove_from_favorites(request, product_id):
 
     return redirect('product_detail', product_id=product_id)
 
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
 
+    if review.can_delete(request.user):
+        review.delete()
+        messages.success(request, 'Review deleted successfully.')
+    else:
+        messages.error(request, 'You do not have permission to delete this review.')
 
+    return redirect('product_detail', product_id=review.product.id)

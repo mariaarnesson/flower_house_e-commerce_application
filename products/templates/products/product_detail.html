@@ -143,36 +143,9 @@
         <p>Comment: {{ review.comment }}</p>
         <p>Created on: {{ review.created_on }}</p>
         <p>User: {{ review.user.username }}</p>
-        
-        {% if review.user == request.user or request.user.is_superuser %}
-            <a href="#" data-toggle="modal" data-target="#editReviewModal{{ review.id }}">Edit</a> |
-            <a href="{% url 'delete_review' review.id %}">Delete</a>
-
-             <!-- Edit Review Modal -->
-             <div class="modal fade" id="editReviewModal{{ review.id }}" tabindex="-1" role="dialog" aria-labelledby="editReviewModal{{ review.id }}Label" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form method="post" action="{% url 'edit_review' review.id %}">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editReviewModal{{ review.id }}Label">Edit Review</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-       
-    {% endif %}    
+        {% if request.user.is_superuser %}
+            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger btn-sm">Delete Review</a>
+        {% endif %}
     </li>
 {% endfor %}
 </ul>
@@ -181,12 +154,31 @@
 {% endif %}
     
 <!-- Add a new review -->
-<h2>Add a Review</h2>
-<form method="post" action="{% url 'add_review' product.id %}">
-    {% csrf_token %}
-    {{ review_form | crispy }}
-    <button type="submit" class="btn btn-secondary">Add</button>
-</form>
+
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#reviewModal">
+    Write a Review
+</button>
+<!-- Review Modal -->
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">Write a Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Display the review form in the modal -->
+                <form method="post" action="{% url 'product_detail' product.id %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% else %}
 <p>Please log in to add or view reviews.</p>
 

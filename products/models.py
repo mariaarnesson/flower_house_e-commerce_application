@@ -68,5 +68,8 @@ class Review(models.Model):
     comment = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def can_delete(self, user):
+        return user == self.user or user.is_superuser
+    
     def __str__(self):
         return f"Review for {self.product} by {self.user}"
