@@ -150,11 +150,27 @@ This is what the favorites page looks like. By clicking on the image, name or pr
 ![Favorites Page](media/favorites_page.png)
 
 
+- Review
 
-When a user is logged in, he has the ability to leave a review, edit and delete it. By pressing the heart icon, the product is added to the favorites page, and by selecting the quantity and pressing the 'ADD TO BAG' button, the product is added to the bag.
-![product detail user is authenicated](media/product_detail_user_is_athenicated.jpeg)
-![review comment added](media/reviews_comment_added.png)
-![edit review](media/edit_review.png)
+When a user is logged in, he has the ability to leave a review, edit and delete it. 
+
+![Review ](media/review_product.jpeg)
+
+By pressing the 'Write a Review' button, a modal shows where the user can rate on a scale of 1-5 how much they rate the product and also write their opinion in the field: 'Write your review here...'. By pressing button 'Submit Review', a message 'Review added successfully!' is displaing.
+
+![Add a review](media/add_a_review.png)
+
+To make changes to a posted opinion, the user has the option to press 'edit', then the modal reappears and the user has the option to re-enter his opinion. By pressing button 'Save Changes', a message 'Review updated successfully.' is displaing.
+
+![Edit review product](media/edit_review_product.png)
+
+To delete a review, the user just needs to press 'Delete' and the review will be deleted and the message 'Review deleted successfully.' will be displaing.
+
+####  if request user is superuser
+
+If the user is the administrator of the site, has the option to delete reviews that other users have posted, and this is what the review page in product detail looks like:
+
+![Review admin ](media/reviews_admin.png)
 
 
 ### Product Management
