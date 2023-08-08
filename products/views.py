@@ -219,6 +219,32 @@ def remove_from_favorites(request, product_id):
     return redirect('product_detail', product_id=product_id)
 
 @login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+
+    if review.user != request.user:
+        return HttpResponseForbidden("You don't have permission to edit this review.")
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfully.')
+            return redirect('product_detail', product_id=review.product.id)
+    else:
+        form = ReviewForm(instance=review)
+
+    template = 'products/product_detail.html'
+    context = {
+        'product': review.product,
+        'form': form,
+        'review': review,
+        'edit': True,
+    }
+
+    return render(request, template, context)
+
+@login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
 

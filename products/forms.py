@@ -30,3 +30,5 @@ class ReviewForm(forms.ModelForm):
         self.fields['rating'].label = 'Rating'
         self.fields['comment'].label = 'Comment'
         self.fields['comment'].widget = forms.Textarea(attrs={'placeholder': 'Write your review here...', 'rows': 4})
+
+
