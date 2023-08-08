@@ -194,6 +194,14 @@ On the Shopping Bag Page with the products added by the user, we have the option
 
 ![Checkout Page](media/checkout_page.jpeg)
 
+By completing the provided form by entering the user's name and payment card number, the user need to press the 'Complete Order' button. Then the Page Checkout Success is displaing. This page provides the details of the order and the user's contact details, as well as a notice that the user will receive a confirmation email at the email address provided:
+
+![Chackout Success Page](media/checkout_success.jpeg)
+
+The content of the confirmation email looks like this:
+
+![Confirmation Email](media/confirmation_email.png)
+
 
 ### Product Management
 
