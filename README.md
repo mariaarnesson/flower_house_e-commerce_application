@@ -172,6 +172,17 @@ If the user is the administrator of the site, has the option to delete reviews t
 
 ![Review admin ](media/reviews_admin.png)
 
+### My Profile Page
+
+On the My Profile Page, the user has the option to enter contact details and save them. In this way, the user does not have to enter them again while going to the checking.html page after putting the products to the bag. On My Profile Page there are also orders that have already been completed by the user before.
+
+![My Profile Page](media/my_profile_page.png)
+
+### Bag Page
+
+![empty bag](media/bag_empty.png)
+![shopping bag](media/shopping_bag.png)
+
 
 ### Product Management
 
