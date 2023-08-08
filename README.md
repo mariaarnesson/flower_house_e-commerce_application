@@ -136,6 +136,21 @@ However, if the user presses the 'ADD TO BAG' button, the product will be added 
 
 #### If a user is authenticated:
 
+- Favorites 
+
+To add a product to favorites, the user needs to press the heart icon located next to the image of the product, and then even the heart icon in the navigation bar leading to the favorites page turns to red, and the message: 'The product has been added to your favorites.' shows up.
+
+![Adding to favorite](media/add_to_favorites.png)
+
+To remove a product from the favorites page, a user need to just press the heart icon again.
+
+![Ramoving from favorite](media/removed_from_favorite.png)
+
+This is what the favorites page looks like. By clicking on the image, name or price of the product, the user goes to the product details page, and by clicking on the 'x' the product is removed from the favorites page.
+![Favorites Page](media/favorites_page.png)
+
+
+
 When a user is logged in, he has the ability to leave a review, edit and delete it. By pressing the heart icon, the product is added to the favorites page, and by selecting the quantity and pressing the 'ADD TO BAG' button, the product is added to the bag.
 ![product detail user is authenicated](media/product_detail_user_is_athenicated.jpeg)
 ![review comment added](media/reviews_comment_added.png)
