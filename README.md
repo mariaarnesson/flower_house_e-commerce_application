@@ -215,7 +215,16 @@ On the 'Product Management' page, the Site Administrator has the ability to add,
 
 
 ![blog categories](media/blog_categories.png)
+
+- Category Flowers Interior Decor:
+![poat3](media/post3.png)
+
+- Category About Flowers:
+
 ![post1](media/post1.png)
+![post4](media/post4.png)
+
+- Category Flower Tips
 ![post2](media/post2.png)
 
 ## Diagram
