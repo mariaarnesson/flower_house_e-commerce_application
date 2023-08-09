@@ -8,6 +8,7 @@ from django.shortcuts import (
 from django.contrib import messages
 
 from products.models import Product
+from .forms import RemoveFromBagForm
 
 
 def view_bag(request):
@@ -63,17 +64,23 @@ def adjust_bag(request, item_id):
 
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
+    form = RemoveFromBagForm(request.POST)
 
-    try:
-        product = get_object_or_404(Product, pk=item_id)
-        bag = request.session.get('bag', {})
+    if form.is_valid():
+        try:
+            product = get_object_or_404(Product, pk=item_id)
+            bag = request.session.get('bag', {})
 
-        bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+            if item_id in bag:
+                del bag[item_id]
+                messages.success(request, f'Removed {product.name} from your bag')
+            else:
+                messages.error(request, 'Item not found in your bag')
 
-        request.session['bag'] = bag
-        return HttpResponse(status=200)
+            request.session['bag'] = bag
+        except Exception as e:
+            messages.error(request, f'Error removing item: {e}')
+    else:
+        messages.error(request, 'Invalid request.')
 
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=500)
+    return redirect(reverse('view_bag'))
