@@ -304,34 +304,53 @@ Now you should create a new env.py file on top of directory level and include da
 - now you should set environment variables by typing:
     - os.environ["DATABASE_URL"] = "Paste the same value as pasted in Heroku Config Vars"
     - os.environ["SECRET_KEY"] = "Paste the same value as pasted in Heroku Config Vars"
-    
+    - os.environ["DEVELOPMENT"] = "1"
+
+After logged in into [Stripe](https://dashboard.stripe.com/), in terminal you should add:
+- export STRIPE_PUBLIC_KEY=(provide your stripe public key value)
+- export STRIPE_SECRET_KEY=(provide your stripe secret key value)
+
+You should create a new endpont to webhook and add to the terminal:
+- export STRIPE_WH_SECRET=(provide your webhook public key value)    
 
 Now you should create Procfile on the top level directory and type 'web: gunicorn PROJ_NAME.wsgi'.
 
-- Stripe
-Log in to Stripe, click the developers link, and then API Keys
-Add them as Config Vars in Heroku
-Create a new webhook endpoint in the developer's menu by clicking add endpoint.
-Add the URL for our Heroku app, followed by /checkout/WH and select receive all events and add endpoint.
-Add the webhooks signing secret to the Heroku config variables.
-
-In terminal you should add:
-- export STRIPE_PUBLIC_KEY=(provide your stripe public key value)
-- export STRIPE_SECRET_KEY=(provide your stripe secret key value)
-- export STRIPE_WH_SECRET=(provide your webhook public key value)
-
-
-
-## Connecting the Heroku application to the GitHub repository
-
-On the [Heroku page](https://dashboard.heroku.com), select the panel of your application that you have already created and press 'deploy'. Under the 'Deployment method' category, select the option: 'Connect to GitHub'. Below you will find: 'Search for a repository to connect to'. Bellow that enter your GitHub username, and your repository name, then press button: 'Search'. Underneath you should see the name of your GitHub respository and a 'Connect' button. Now there are two options to choose: either use 'Automatic deploys' or 'Manual deploy'.
-
-I use the option: 'Manual deploy'. Next to a option: 'Choose a branch to deploy', select: 'main' and press button: 'Deploy Branch'. You have to wait a while while branch main builds up. When the branch is build and completed successfully, you will see a message: 'Your app was successfully deployed' and a button: 'View'. Enter 'View' to see the live project.
-The live link can be found here - [View the live project here](https://flowerhouse-3853febb8d54.herokuapp.com/).
-
 ## Set up Amazon Web Services' S3
+The steps were done using [AWS setup new UI](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf).
 
-[AWS setup new UI](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf)
+Creta a account on [AWS Amazon](https://signin.aws.amazon.com/). 
+1. On the top left, press the 'Services' option and then 'S3'. 
+2. When the column: 'Amazon S3' appears on the left, select the first option: 'Basket'. Then press the orange 'Create bucket' button on the right side. Fill out the form with the name of the bucket and the location that is closest to you. Going down, select: 'Block all public access'. Then press the orange 'Create bucket' button at the bottom of the page. 
+3. In the bucket you created:  
+  - select the 'Properties' option and by going to the bottom of site, on 'Static website hosting' option, press the 'edit' button. Then select: 'Static website hosting', and in the form, in the place of index document, enter 'index.html', and in the place of error document, enter error.html. Then press the 'Save' button.
+  - select the 'Permissions' option and choose:
+    -  'Cross-origin resource sharing (CORS)'and enter it in the field provided:
+        [
+      {
+          "AllowedHeaders": [
+              "Authorization"
+          ],
+          "AllowedMethods": [
+              "GET"
+          ],
+          "AllowedOrigins": [
+              "*"
+          ],
+          "ExposeHeaders": []
+      }
+    ]
+    - Then select 'Bucket Policy'. At the bottom of the page, select 'Policy generator'. Now the page titled 'AWS Policy Generator' is displayed. In the first 'Select Type of Policy' field, select 'S3 Bucket Policy'. For 'Effect', select 'Allow'. For 'Principal', select '*', For 'AWS Service', select 'Amazon S3'. Under 'Actions', select 'GetObject'. Then copy this policy into the bucket policy editor and paste into 'Amazon Resource Name (ARN)'. Press the 'Add Statement' button. And then the 'Generate Policy' button. Copy the policy JSON Document that then shows up and paste the into the previous page 'Bucket policy editor'. Then press the 'Save' button.
+
+4. On the top left, press the 'Services' option and then 'IAM'. 
+5. When the column: 'Identity and Access Management (IAM)' appears on the left, select the option: 'Groups' and after that 'Creata New Group' button. After that set group name and press button 'Next Step'. 
+6. On the left select te option 'Create policy', select option 'JSON', 'Import Managed policies' and search after 's3', from following options choose 'AmazonS3FullAccess' and choose button 'Import'. 
+7. In 'Create policy' JSON code add 'Amazon Resource Name (ARN)' and add '/*'
+8. In 'Review Policy' add a name, add description and then a message to confirm that the policy has been created is displaing. 
+9. then press button 'Atach Policy'. 
+10. Press button 'add user' and select access type programmatic access. When user is added, you can download 'csv. 
+11. In downloaded file your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY is displaing and you need to add the values of them to Heroku config vars. 
+
+
 
 - Create an AWS Account by going to aws.amazon.com.
 - Create a new bucket, give it a name and choose the region which isnclosest to you.
@@ -396,6 +415,15 @@ Copy the entire Policy, and paste it into the Bucket Policy Editor
 - If the edit button is disabled, you need to change the Object Ownership section above to ACLs enabled (mentioned above).
 
 - Download the CSV file with the secret keys.
+
+
+## Connecting the Heroku application to the GitHub repository
+
+On the [Heroku page](https://dashboard.heroku.com), select the panel of your application that you have already created and press 'deploy'. Under the 'Deployment method' category, select the option: 'Connect to GitHub'. Below you will find: 'Search for a repository to connect to'. Bellow that enter your GitHub username, and your repository name, then press button: 'Search'. Underneath you should see the name of your GitHub respository and a 'Connect' button. Now there are two options to choose: either use 'Automatic deploys' or 'Manual deploy'.
+
+I use the option: 'Manual deploy'. Next to a option: 'Choose a branch to deploy', select: 'main' and press button: 'Deploy Branch'. You have to wait a while while branch main builds up. When the branch is build and completed successfully, you will see a message: 'Your app was successfully deployed' and a button: 'View'. Enter 'View' to see the live project.
+The live link can be found here - [View the live project here](https://flowerhouse-3853febb8d54.herokuapp.com/).
+
 
 
 
