@@ -87,18 +87,3 @@ def post_like(request, slug):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def products_list(request):
-    name = request.GET.get('name')
-    description = request.GET.get('description')
-
-    queryset = Product.objects.filter(name=name, description=description)
-
-    template_name = "products.html"
-
-    return render(
-        request,
-        template_name,
-        {
-            "products": queryset,
-        }
-    )
