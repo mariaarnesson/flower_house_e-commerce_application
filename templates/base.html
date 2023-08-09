@@ -83,33 +83,29 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center text-white">
                                 <div><i class="fas fa-user fa-lg"></i></div>
-                                {% if request.user.is_superuser %}
-                                <h4 class="my-0"> {{ user.username }}</h4>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% endif %}
-                            {% if request.user.is_authenticated %}
-                            <h4 class="my-0"> {{ user.username }} </h4>
-                        </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">   
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                            <h5 class="my-0"> Register/Login </h5>
-                        </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                </ul>
+                                {% if request.user.is_superuser or request.user.is_authenticated %}
+                        <h4 class="my-0">{{ user.username }}</h4>
+                    {% else %}
+                        <h5 class="my-0">Register/Login</h5>
+                    {% endif %}
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                {% endif %}
+                
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+    </ul>
+                  
                 <div class="list-inline-item ml-3">
                     <a class="{% if is_favorite > 0 %}text-danger font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'favorites' %}">
                         <div class="text-center">
