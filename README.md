@@ -274,8 +274,15 @@ This key is needed to enter as VALUE to KEY - SECRET_KEY to Config Vars on Herok
 
 Value of DISABLE_COLLECTSTATIC should be 1
 
-- PORT
-Value of PORT should be 8000.
+- STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY:
+
+To create STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY you need to log in to [Stripe](https://dashboard.stripe.com/). On the top right site is a button 'developer' which you should press. in the API-key option, scrolling down, there is your public and secret key that you should enter into Heroku.
+
+- STRIPE_WH_SECRET
+
+On the same page, by selecting the 'Webhooks' option, you go to the page where you can create an endpoint. By pressing the 'Add a endpoint' button, a form to be filled is displayed. In the first field marked Endpoint URL, you should enter the link to your website in Heroku, adding at the end: '/checkout/wh'. Then select receive all events and press the button: 'add endpoint'.
+After clicking on the endpoint you created, next to the option: Signature secret, select: 'show', and then the value of STRIPE_WH_SECRET appears, which you should enter into Heroku Config Vars.
+
 
 ## Creating a respository on GitHub
 
