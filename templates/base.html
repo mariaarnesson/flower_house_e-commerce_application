@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+    <head>
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
@@ -94,14 +94,14 @@
                             {% endif %}
                             {% if request.user.is_authenticated %}
                             <h4 class="my-0"> {{ user.username }} </h4>
-                            </div>
+                        </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">   
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                         {% else %}
                             <h5 class="my-0"> Register/Login </h5>
-                            </div>
+                        </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -137,7 +137,7 @@
        {% include 'includes/mobile-top-header.html' %}
     </header>
     {% if messages %}
-        <div class="message-container">
+    <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
@@ -151,7 +151,7 @@
                     {% endif %}
                 {% endwith %}
             {% endfor %}          
-        </div>
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -160,91 +160,91 @@
     {% block content %}
     {% endblock %}
 
-<footer id="footer" class="container-wrapper bg-dark" style="background-color: #8E5252;;">
-    <div class="container quotes-container content-container">
-        <section class="footer text-white">
-            <div class="row">
-                <div class="col-12 page-header mb-4">
-                    <h2 class="text-uppercase text-center text-white">Stay in touch:</h2>
-                    <hr class="block-divider block-divider--short">
+    <footer id="footer" class="container-wrapper bg-dark" style="background-color: #8E5252;;">
+        <div class="container quotes-container content-container">
+            <section class="footer text-white">
+                <div class="row">
+                    <div class="col-12 page-header mb-4">
+                        <h2 class="text-uppercase text-center text-white">Stay in touch:</h2>
+                        <hr class="block-divider block-divider--short">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 text-white">
-                    <h3>Social</h3>
-                    <p class="text-white">Keep up to date with all our latest offers</p>
-                    <a href="#" class="text-white" target="_blank"><i class="fab fa-facebook-square text-white"></i> Follow us on Facebook!</a>
-                </div>
-            <div class="col-12 col-md-6">
-           <!-- Mailchimp signup form here -->
-                <div id="mc_embed_signup">
-                    <form action="https://herokuapp.us11.list-manage.com/subscribe/post?u=d6d5b4ceac69679473896b1cc&amp;id=7fb1768e89&amp;f_id=005aa6e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                        <div id="mc_embed_signup_scroll">
-                            <h3>Subscribe</h3>
-                            
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address 
-                                    <span class="asterisk">*</span>
-                                </label>
-                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
-                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                <div class="row">
+                    <div class="col-12 col-md-6 text-white">
+                        <h3>Social</h3>
+                        <p class="text-white">Keep up to date with all our latest offers</p>
+                        <a href="#" class="text-white" target="_blank"><i class="fab fa-facebook-square text-white"></i> Follow us on Facebook!</a>
+                    </div>
+                <div class="col-12 col-md-6">
+            <!-- Mailchimp signup form here -->
+                    <div id="mc_embed_signup">
+                        <form action="https://herokuapp.us11.list-manage.com/subscribe/post?u=d6d5b4ceac69679473896b1cc&amp;id=7fb1768e89&amp;f_id=005aa6e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <h3>Subscribe</h3>
+                                
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address 
+                                        <span class="asterisk">*</span>
+                                    </label>
+                                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                                </div>
+                                <div class="indicates-required">
+                                    <span class="asterisk">*</span> indicates required
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                                <input type="text" name="b_d6d5b4ceac69679473896b1cc_7fb1768e89" tabindex="-1" value="">
                             </div>
-                            <div class="indicates-required">
-                                <span class="asterisk">*</span> indicates required
-                            </div>
-                        <div id="mce-responses" class="clear foot">
-                            <div class="response" id="mce-error-response" style="display: none;"></div>
-                            <div class="response" id="mce-success-response" style="display: none;"></div>
-                        </div>
-                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-                            <input type="text" name="b_d6d5b4ceac69679473896b1cc_7fb1768e89" tabindex="-1" value="">
-                        </div>
-                        <div class="optionalParent">
-                            <div class="clear foot">
-                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                                <div style="margin-top: 50%; margin-left: -44%;">
-                                    <p class="brandingLogo" style="margin: -6em auto;">
-                                        <a href="http://eepurl.com/iwgvow" title="Mailchimp - email marketing made easy and fun">
-                                            <img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="referral badge">
-                                        </a>
-                                    </p>
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                                    <div style="margin-top: 50%; margin-left: -44%;">
+                                        <p class="brandingLogo" style="margin: -6em auto;">
+                                            <a href="http://eepurl.com/iwgvow" title="Mailchimp - email marketing made easy and fun">
+                                                <img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="referral badge">
+                                            </a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        
-                    </form>
-                </div>
-            </div>    
-         </section>    
-    </div>
-</footer>
+                        </form>
+                    </div>
+                </div>    
+            </section>    
+        </div>
+    </footer>
 
-{% block postloadjs %}
-<script type="text/javascript">
-    $('.toast').toast('show');
-</script>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script>
-    (function($) {
-        window.fnames = new Array();
-        window.ftypes = new Array();
-        fnames[0]=EMAIL;
-        ftypes[0]=merge;
-        fnames[1]=FNAME;
-        ftypes[1]=merge;
-        fnames[2]=LNAME;
-        ftypes[2]=merge;
-        fnames[3]=ADDRESS;
-        ftypes[3]=merge;
-        fnames[4]=PHONE;
-        ftypes[4]=merge;
-        fnames[5]=BIRTHDAY;
-        ftypes[5]=merge;
-        }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-</script>
-    
-{% endblock %}
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
+        (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0]=EMAIL;
+            ftypes[0]=merge;
+            fnames[1]=FNAME;
+            ftypes[1]=merge;
+            fnames[2]=LNAME;
+            ftypes[2]=merge;
+            fnames[3]=ADDRESS;
+            ftypes[3]=merge;
+            fnames[4]=PHONE;
+            ftypes[4]=merge;
+            fnames[5]=BIRTHDAY;
+            ftypes[5]=merge;
+            }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+        
+    {% endblock %}
 
-</body>
-</html>
+    </body>
+    </html>
