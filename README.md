@@ -207,7 +207,7 @@ The content of the confirmation email looks like this:
 
 On the 'Product Management' page, the Site Administrator has the ability to add, edit or remove a product available for purchase.
 
-![Add product](media/add_product.png)
+![Add product](media/add_product_management.jpeg)
 
 ![Edit Product](media/edit_product.jpeg)
 
