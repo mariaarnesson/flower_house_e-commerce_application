@@ -183,7 +183,7 @@ On the My Profile Page, the user has the option to enter contact details and sav
 The icon in the navigation bar resembling a bag is a link to the shopping bag page. Under the icon, the total price is shown after putting the products into the bag, and the color of the bag turns to red when the products are inside. By pressing the bag icon, we go to the shopping bag page. 
 
 This is what the page looks like when the bag is empty: 
-![empty bag](media/bag_empty.png)
+![empty bag](media/bag_empty.jpeg)
 
 This is what it looks like when products are added to the bag:
 ![shopping bag](media/shopping_bag.png)
