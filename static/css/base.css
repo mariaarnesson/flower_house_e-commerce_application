@@ -37,6 +37,8 @@ h2 {
 #footer {
     padding-top: 30px; 
     padding-bottom: 30px;
+    background-image: url(https://img.freepik.com/free-photo/floral-garland_23-2148134066.jpg?w=826&t=st=1691657829~exp=1691658429~hmac=ed28fd279828d5212298b80a9ab5f87da9c195983fe38e2fc26ba95e2678f8ca);
+    background-size: cover;
    
 }
 .card-img-top {
