@@ -68,7 +68,6 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
-    
 
     is_favorite = False
     if request.user.is_authenticated:
@@ -218,12 +217,15 @@ def remove_from_favorites(request, product_id):
 
     return redirect('product_detail', product_id=product_id)
 
+
 @login_required
 def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
 
     if review.user != request.user:
-        return HttpResponseForbidden("You don't have permission to edit this review.")
+        return HttpResponseForbidden(
+            "You don't have permission to edit this review."
+            )
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -244,6 +246,7 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
@@ -252,6 +255,9 @@ def delete_review(request, review_id):
         review.delete()
         messages.success(request, 'Review deleted successfully.')
     else:
-        messages.error(request, 'You do not have permission to delete this review.')
+        messages.error(
+            request,
+            'You do not have permission to delete this review.'
+        )
 
     return redirect('product_detail', product_id=review.product.id)

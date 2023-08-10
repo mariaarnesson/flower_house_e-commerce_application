@@ -10,6 +10,7 @@
 - W3C Markup Validation HTML
   - [HTML Validator](https://validator.w3.org/#validate_by_input) was used to validate HTML.
 
+
 - W3C CSS validation CSS
   - [Validator.w3](https://validator.w3.org/nu/#textarea) was used to validate CSS.
 
@@ -21,6 +22,89 @@
 
   -  Result for Bag bag_tools.py:
     - [Result Bag bag_tools.py ](media/test/result_pep8bagtools.png)
+  - Result for Bag contexts.py:
+    - [Result Bag contexts.py part1 ](media/test/result_pep8_contexts_part1.png)
+    - [Result Bag contexts.py part2](media/test/result_pep8_contexts_part2.png)
+  - Result for Bag urls.py:
+    - [Result Bag urls.py ](media/test/result_pep8_bag_urls.png)
+  - Result for Bag views.py:
+    - [Result Bag views.py part1](media/test/result_pep8_bag_views_part1.png)
+    - [Result Bag views.py part2](media/test/result_pep8_bag_views_part2.png)
+    - [Result Bag views.py part3](media/test/result_pep8_bag_views_part3.png)
+  - Result for Checkout admin.py:
+    - [Result Checkout admin.py](media/test/result_pep8_checkout_admin.png)
+  - Result for Checkout apps.py:
+    - [Result Checkout apps.py](media/test/result_pep8_checkout_apps.png)
+  - Result for Checkout forms.py:
+    - [Result Checkout forms.py part1](media/test/result_pep8_checkout_forms_part1.png)
+    - [Result Checkout forms.py part2](media/test/result_pep8_checkout_forms_part2.png)
+  - Result for Checkout models.py:
+    - [Result Checkout models.py part1](media/test/result_pep8_checkout_models_part1.png)
+    - [Result Checkout models.py part2](media/test/result_pep8_checkout_models_part2.png)
+    - [Result Checkout models.py part3](media/test/result_pep8_checkout_models_part3.png)
+  - Result for Checkout signals.py:
+    - [Result Checkout signals.py](media/test/result_pep8_checkout_signals.png)
+  - Result for Checkout urls.py:
+    - [Result Checkout urls.py](media/test/result_pep8_checkout_urls.png)
+  Result for Checkout views.py:
+    - [Result Checkout views.py part1](media/test/result_pep8_checkout_views_part1.png)
+    - [Result Checkout views.py part2](media/test/result_pep8_checkout_views_part2.png)
+    - [Result Checkout views.py part3](media/test/result_pep8_checkout_views_part3.png)
+    - [Result Checkout views.py part4](media/test/result_pep8_checkout_views_part4.png)
+    - [Result Checkout views.py part5](media/test/result_pep8_checkout_views_part5.png)
+    - [Result Checkout views.py part6](media/test/result_pep8_checkout_views_part6.png)
+    - [Result Checkout views.py part7](media/test/result_pep8_checkout_views_part7.png)
+  Result for Checkout webhook_handler.py:
+    - [Result Checkout webhook_handler.py part1](media/test/result_pep8_checkout_webhook_handler_part1.png)
+    - [Result Checkout webhook_handler.py part2](media/test/result_pep8_webhook_handler_part2.png)
+    - [Result Checkout webhook_handler.py part3](media/test/result_pep8_webhook_handler_part3.png)
+    - [Result Checkout webhook_handler.py part4](media/test/result_pep8_webhook_handler_part4.png)
+    - [Result Checkout webhook_handler.py part5](media/test/result_pep8_webhook_handler_part5.png)
+    - [Result Checkout webhook_handler.py part6](media/test/result_pep8_webhook_handler_part6.png)
+  Result for Checkout webhooks.py:
+    - [Result Checkout webhooks.py part1](media/test/result_pep8_webhooks_part1.png)
+    - [Result Checkout webhooks.py part2](media/test/result_pep8_webhooks_part2.png)
+  Result for Home urls.py:
+    - [Result Home urls.py](media/test/result_pep8_home_urls.png)
+  Result for Home views.py:
+    - [Result Home views.py](media/test/result_pep8_home_views.png)
+  Result for Products admin.py:
+    - [Result Products admin.py part1](media/test/result_pep8_products_admin.png)
+    - [Result Products admin.py part2](media/test/result_pep8_products_admin_part2.png)
+  Result for Products forms.py:
+    - [Result Products forms.py](media/test/result_pep8_products_forms.png)
+  Result for Product models.py:
+    - [Result Products moedls.py part1](media/test/result_pep8_products_moedls_part1.png)
+    - [Result Products moedls.py part2](media/test/result_pep8_products_models_part2.png)
+    - [Result Products moedls.py part3](media/test/result_pep8_products_models_part3.png)
+  Result for Products urls.py:
+    - [Result Products urls.py](media/test/result_pep8_urls_products.png)
+  Result for Product views.py:
+    
+    - [Result Product views.py part1](media/test/result_pep8_products_views_part1.png)
+    - [Result Product views.py part2](media/test/result_pep8_products_views_part2.png)
+    - [Result Product views.py part3](media/test/result_pep8_products_views_part3.png)
+    - [Result Product views.py part4](media/test/result_pep8_products_views_part4.png)
+    - [Result Product views.py part5](media/test/result_pep8_products_views_part5.png)
+    - [Result Product views.py part6](media/test/result_pep8_products_views_part6.png)
+    - [Result Product views.py part7](media/test/result_pep8_products_views_part7.png)
+    - [Result Product views.py part8](media/test/result_pep8_products_views_part8.png)
+
+  Result for Profile forms.py:
+    - [Result Profile forms.py](media/test/result_pep8_profile_forms.png)
+
+  Result for Profile models.py:
+    - [Result Profile models.py part1](media/test/result_pep8_profile_models_part1.png)
+    - [Result Profile models.py part2](media/test/result_profile_pep8_models_part2.png)
+
+  Result for Profile urls.py:
+    - [Result Profile urls.py](media/test/result_pep8_profile_urls.png)
+
+  Result for Profile views.py:
+    - [Result Profile views.py part1](media/test/result_profile_pep8_views_part1.png)
+    - [Result Profile views.py part2](media/test/result_profile_pep8_views_part2.png)
+  
+  
 ## Manual Testing 
 
 

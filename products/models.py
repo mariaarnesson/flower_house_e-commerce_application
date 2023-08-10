@@ -70,6 +70,6 @@ class Review(models.Model):
 
     def can_delete(self, user):
         return user == self.user or user.is_superuser
-    
+
     def __str__(self):
         return f"Review for {self.product} by {self.user}"
