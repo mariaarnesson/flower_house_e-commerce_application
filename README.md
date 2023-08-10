@@ -574,6 +574,39 @@ This is evidence of either a real Facebook business page for the purposes of dig
 ![Facebook part2](media/facebook_page2.png)
 ![Facebook part3](media/facebook_page3.png)
 ![Facebook part4](media/facebook_page4.png)
+
+
+
+# Planning
+## Technologies Used
+### Languages Used
+- [HTML](https://sv.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [PYTHON](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [JQUERY](https://en.wikipedia.org/wiki/JQuery)
+- [JAVA SCRIPT](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries and Programs Used:
+
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes.
+- [Font Awesome](https://fontawesome.com/) was used to create icons to footer and home page, logo.
+- [Google Fonts](https://fonts.google.com/?preview.text=Love%20Running&preview.text_type=custom) was used to import 'Caveat', 'Courier New' that have been used for each page.
+- [Git](https://git-scm.com/) was used  by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) was used as a repository for code of the project. 
+- [Django](https://www.djangoproject.com/) was used as the framework to support rapid and secure development of the application.
+- [Bootstrap](https://getbootstrap.com/) was used to build responsive webbpages.
+- [Heroku](https://id.heroku.com/) was used to deploy the project.
+- [Lucid Chart](https://lucid.app/lucidchart) was used to create a diagram to models database.
+- [Pep8](https://pep8ci.herokuapp.com/#) was used to validate Python code.
+- [AWS](https://aws.amazon.com//) was used to store the images used by the application
+- [JSHint](https://jshint.com/) was used to validate JavaScript code.
+- [PostgreSQL](https://www.elephantsql.com/) was used for database.
+- [SQLite](https://www.sqlite.org/) was used for databse.
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for registration.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to get a form crispy.
+- [STRIPE](https://stripe.com/) was used to enable the customer to pay with a payment card.
+
+
 ## Credits 
 
 - [Freepik](https://www.pexels.com/sv-se/)

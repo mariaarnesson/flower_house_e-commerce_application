@@ -7,8 +7,6 @@
             <div class="col"></div>
         </div>
     </div>
-   
-   
 {% endblock %}
 
 {% block content %}
@@ -19,34 +17,31 @@
     <hr>
   </div>
 </div>
-
 <div class="container-fluid">
   <div class="row">
       {% if favorite_products %}
           {% for product in favorite_products %}
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="card">
-                      <a href="{% url 'product_detail' product.pk %}">
-                          <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}" >
-                      </a>
-                      <div class="card-body">
-                          <h5 class="card-title">{{ product.name }}</h5>
-                          <p class="card-text text-danger">{{ product.price }}</p>
-                          <a href="{% url 'remove_from_favorites' product.id %}" class="btn btn-danger">
-                              <i class="fa-solid fa-x"></i>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          {% endfor %}
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card">
+        <a href="{% url 'product_detail' product.pk %}">
+          <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}" >
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text text-danger">{{ product.price }}</p>
+          <a href="{% url 'remove_from_favorites' product.id %}" class="btn btn-danger">
+              <i class="fa-solid fa-x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
       {% else %}
-          <div class="col">
-              <p class="text-center">You have no favorite products yet.</p>
-          </div>
+    <div class="col">
+      <p class="text-center">You have no favorite products yet.</p>
+    </div>
       {% endif %}
-  </div>
-
- 
+      </div>
  <!-- Pagination links -->
  <div class="row">
   <div class="col">

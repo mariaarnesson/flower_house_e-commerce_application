@@ -12,8 +12,11 @@
   Result for Index.html:
     - [Validator Index.html ](media/test/result_html_validator_index.jpeg)
   Resultat for products.html:
-    - [Validator products.html](media/test/resultat_html_products.jpeg)  
-
+    - [Validator products.html](media/test/resultat_html_products.jpeg)
+  Result for ptoduct_detail.html:
+    - [Validator product_detail.html](media/test/result_product_detail_html.jpeg)  
+  Result for bag.html:
+    - [Validator bag.html](media/test/result_bag_html.jpeg)
 
 - W3C CSS validation CSS
   - [Validator.w3](https://validator.w3.org/nu/#textarea) was used to validate CSS.
