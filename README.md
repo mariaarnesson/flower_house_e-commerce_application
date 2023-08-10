@@ -574,7 +574,7 @@ My company's goal is that customers buy often and a lot of products. I want to p
 ## Facebook business page
 
 This is evidence of either a real Facebook business page for the purposes of digital marketing:
-
+![fb](media/fb.png)
 ![Facebook part1](media/facebook_page1.png)
 ![Facebook part2](media/facebook_page2.png)
 ![Facebook part3](media/facebook_page3.png)

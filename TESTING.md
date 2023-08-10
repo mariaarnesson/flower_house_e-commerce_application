@@ -27,8 +27,14 @@
 - W3C CSS validation CSS
   - [Validator.w3](https://validator.w3.org/nu/#textarea) was used to validate CSS.
 
+  Result base.css:
+    - [Base.css](media/test/base.css.jpeg)
+    - [Blog.css](media/test/blog.css.png)
+
 - JSHint JavaScript
   - [JSHint](https://jshint.com/) was used to validatw JS.
+
+ [ Result stripe_elements.js](media/test/js.jpeg)
 
 - Pep8 Python
   - [Python pep8](https://pep8ci.herokuapp.com/#) was used to validate Python code.
