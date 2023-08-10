@@ -9,6 +9,10 @@
 ### Validation:
 - W3C Markup Validation HTML
   - [HTML Validator](https://validator.w3.org/#validate_by_input) was used to validate HTML.
+  Result for Index.html:
+    - [Validator Index.html ](media/test/result_html_validator_index.jpeg)
+  Resultat for products.html:
+    - [Validator products.html](media/test/resultat_html_products.jpeg)  
 
 
 - W3C CSS validation CSS
