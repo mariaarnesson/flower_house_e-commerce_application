@@ -240,6 +240,11 @@ On the 'Product Management' page, the Site Administrator has the ability to add,
 - [Home Page- Desktop](media/wireframes/homepage_desktop.png)
 - [Products- Desktop](media/wireframes/products_desktop.png)
 - [Product Detail Desktop](media/wireframes/product_detail_desktop.png)
+- [Favorites Desktop](media/wireframes/favorites_desktop.png)
+- [Product management- desktop](media/wireframes/product_management_desktop.png)
+- [Favorites Ipad](media/wireframes/favorites_ipad.png)
+- [Homepage Ipad](media/wireframes/homepage_ipad.png)
+- [Product Ipad](media/wireframes/products_ipad.png)
 
 
 
@@ -608,7 +613,14 @@ This is evidence of either a real Facebook business page for the purposes of dig
 
 
 ## Credits 
+### Codes
 
+- Part of my project is based on Code Institue Building an E-Commerce Platform.
+
+- Florist Blog is based on the "I think, therefore I blog" guide in the Code Institute Full Stack Frameworks module.
+
+
+### Information about flowers:
 - [Freepik](https://www.pexels.com/sv-se/)
 - [Pexels](https://www.freepik.com/search?format=search&query=children)
 - [Bouquet- description](https://urocznica.pl/letni-bukiet-kwiatow-inspiracje-i-cytaty/)
@@ -624,6 +636,9 @@ This is evidence of either a real Facebook business page for the purposes of dig
 - [Take care roses](https://www.floom.com/pages/how-to-care-for-cut-roses)
 - [How flowers have a positive effect on our mood](https://unlimitedgreens.com/blogs/blog/how-do-flowers-have-a-positive-impact-on-our-mood)
 - [Decorate with flowers- blog post](https://www.thespruce.com/how-to-decorate-with-flowers-5207816)
+
+### Images:
+All pictures on this site are taken from [Freepik](https://www.freepik.com/)
 
 # Acknowledgements:
 
