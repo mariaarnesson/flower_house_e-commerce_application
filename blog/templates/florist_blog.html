@@ -1,90 +1,61 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 <ul>
     {% for category in categories %}
-        <li>
-            <a href="?category={{ category.name }}">{{ category.name }}</a>
-        </li>
+  <li>
+      <a href="?category={{ category.name }}">{{ category.name }}</a>
+  </li>
     {% endfor %}
 </ul>
-
-<h1> {{ category.name }} </h1>
 <section class="text-center text-lg-start">
     {% for blog_post in post_list %}
-    <style>
-        .cascading-right {
-          margin-right: -50px;
-        }
-    
-        @media (max-width: 991.98px) {
-          .cascading-right {
-            margin-right: 0;
-          }
-        }
-      </style>
-<div class="container py-4">
+  <div class="container py-4">
     <div class="row g-0 align-items-center">
       <div class="col-lg-6 mb-5 mb-lg-0">
-       
-        <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
+        <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
           <div class="card-body p-5 shadow-5 text-center">
-            
-                <h2 class="card-title">{{ blog_post.title }}</h2>
-                <p class="card-text">Category: {{ blog_post.blog_category }}</p>
-                <p class="card-text">{{ blog_post.excerpt }}</p>
-            
+            <h2 class="card-title">{{ blog_post.title }}</h2>
+            <p class="card-text">Category: {{ blog_post.blog_category }}</p>
+            <p class="card-text">{{ blog_post.excerpt }}</p>
             <hr>
-            <a href="{% url 'post_detail' blog_post.slug  %}" class="btn btn-warning text-uppercase text-white"> Read more > </a>     
-                                
+            <a href="{% url 'post_detail' blog_post.slug  %}" class="btn btn-warning text-uppercase text-white"> Read more > </a>                      
+          </div>
         </div>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="{{ blog_post.image.url }}" alt="{{ blog_post.image }}" class="w-100 rounded-4 shadow-4" style="border-radius: 1em; width: 250px; height: 368px;">
+      </div>
     </div>
   </div>
-  
-  <div class="col-lg-6 mb-5 mb-lg-0">
-
-    <img src="{{ blog_post.image.url }}" alt="{{ blog_post.image }}" class="w-100 rounded-4 shadow-4" style="border-radius: 1em;
-    width: 250px;
-    height: 368px;">
-  </div>
-
-
-</div>
-</div>
 <!-- Jumbotron -->
 {% endfor %}
 </section>
-
 <br><br><br>
-
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+      {% endif %}
+      {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
             {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
+  </ul>
+</nav>
     {% endif %}
-</div>
+
 {%endblock%}
 
 

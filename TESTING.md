@@ -17,6 +17,12 @@
     - [Validator product_detail.html](media/test/result_product_detail_html.jpeg)  
   Result for bag.html:
     - [Validator bag.html](media/test/result_bag_html.jpeg)
+  Result for checkout_success.html:
+    - [Validator checkout_success.html](media/test/result_html_checkout_success.jpeg)
+  Result for blog_category.html:
+    - [Validator blog_category.html](media/test/result_html_blog_category.jpeg)
+  Result for florist_blog.html:
+    - [Validator florist_blog.html](media/test/result_html_florist_blog.jpeg)
 
 - W3C CSS validation CSS
   - [Validator.w3](https://validator.w3.org/nu/#textarea) was used to validate CSS.

@@ -625,5 +625,11 @@ This is evidence of either a real Facebook business page for the purposes of dig
 - [How flowers have a positive effect on our mood](https://unlimitedgreens.com/blogs/blog/how-do-flowers-have-a-positive-impact-on-our-mood)
 - [Decorate with flowers- blog post](https://www.thespruce.com/how-to-decorate-with-flowers-5207816)
 
+# Acknowledgements:
+
+- Thank you to my mentor Elaine Broche for useful feedback and guidance in my project. I received a lot of help and a very detailed explanation.
+
+- Thank you to tutor assistance Oisin and Ed for explanation of the issues related to checkout confirmation email and  Rebecca for great help with the issue that was in file signals.py related to the final price displayed in the confirmation e-mail.
+
  
 

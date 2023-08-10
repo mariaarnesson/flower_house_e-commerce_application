@@ -13,43 +13,24 @@
     </div>
 {% endblock %}
 {% block content %}
-
-
-
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
-       
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            
-                <h3 class=" text-md-start">"Happiness held is the seed; Happiness shared is the flower."</h2>
-                <h2 class="">John Harrigan</h3>
-                  
-            
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1"> 
+          <h3 class=" text-md-start">"Happiness held is the seed; Happiness shared is the flower."</h3>
+          <h2 class="">John Harrigan</h2>     
         </div>
       </div>
     </div>
-
-
-
-
-<div class="container py-5 h-100">
-  
-  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
     {% for category in categories %}  
-    <div class="bg-image">
-            
-                <img src="{{ category.image.url }}"alt="{{ category.name }}"
-                class="img-thumbnail" style="width: 25em; height:20em;">
-            
-            <div class="d-flex justify-content-center align-items-center h-100">
-              <a href="{% url 'post_list' %}?category={{ category.name }}" class="btn btn-secondary text-white mb-0"> {{ category.name }} </a>
-            </div>
-         
-           
-    </div>
+       <div class="bg-image">
+        <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-thumbnail" style="width: 25em; height:20em;">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <a href="{% url 'post_list' %}?category={{ category.name }}" class="btn btn-secondary text-white mb-0"> {{ category.name }} </a>
+          </div> 
+        </div>
     {% endfor %}
+      </div>
     </div>
-  </div>
-
-
 {% endblock %}
