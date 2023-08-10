@@ -110,6 +110,24 @@
   Result for Profile views.py:
     - [Result Profile views.py part1](media/test/result_profile_pep8_views_part1.png)
     - [Result Profile views.py part2](media/test/result_profile_pep8_views_part2.png)
+
+  Result for Blog admin.py:
+    - [Result Blog admin.py](media/test/result_pep8_blog_admin.png)  
+
+  Result for Blog forms.py:
+    - [Result Blog forms.py](media/test/result_pep8_blog_forms.png)
+  
+  Result for Blog models.py:
+    - [Result Blog models.py part1](media/test/result_pep8_blog_models_part1.png)
+    - [Result Blog models.py part2](media/test/result_pep8_blog_models_part2.png)
+
+  Result for Blog urls.py:
+    - [Result Blog urls.py](media/test/result_pep8_blog_urls.png)
+
+  Result for Blog views.py:
+    - [Result Blog views.py part1](media/test/result_pep8_blog_views_part1.png)
+    - [Result Blog views.py part2](media/test/result_pep8_blog_views_part2.png)
+    - [Result Blog views.py part3](media/test/result_pep8_blog_views_part3.png)  
   
   
 ## Manual Testing 
